@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ButtonDefault, MainLogo } from "../../components/";
+import { ButtonDefault, MainLogo, Carousel } from "../../components/";
 import './style.css';
 
 class HomeDefault extends Component {
@@ -15,6 +15,7 @@ class HomeDefault extends Component {
           variantType="outline-info"
           size="md"
         />
+        <Carousel />
         </div>
       </div>
     );
