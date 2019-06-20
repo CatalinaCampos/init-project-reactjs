@@ -1,12 +1,18 @@
-import React, { Component } from 'react';
-import { ButtonDefault } from '../../components'
+import React, { Component } from "react";
+import { Input, ButtonDefault, MainLogo } from "../../components/";
+import "./style.css";
 
 class Login extends Component {
-    render(){
-        return(
-            <ButtonDefault />
-        )
-    }
+  render() {
+    return (
+      <div>
+        <MainLogo />
+        <Input size="sm" placeholder="Correo" className="inputLogin" />
+        <Input size="sm" placeholder="Contraseña" className="inputLogin" />
+        <ButtonDefault name="Ingresar" />
+      </div>
+    );
+  }
 }
 
 export default Login;
