@@ -29,7 +29,7 @@ const images = [
         body: 'body 1',
         type: 'Card.Header',
         variant: 'link',
-        eventKey: '0'
+        eventKey: '0',
       },
       {
         title: 'Header 2',
@@ -38,6 +38,21 @@ const images = [
         variant: 'link',
         eventKey: '1'
       }
-    ]
+    ];
 
-  export { images, dataAccordion };
+    const groupBtn = [
+      {
+        variant: 'info',
+        title: 'Btn 1'
+      },
+      {
+        variant: 'info',
+        title: 'Btn 2'
+      },
+      {
+        variant: 'info',
+        title: 'Btn 3'
+      }
+    ];
+
+  export { images, dataAccordion, groupBtn };
