@@ -1,3 +1,15 @@
-import Input from './Input';
+import React, { Component } from 'react';
+import { InputGroup, FormControl } from 'react-bootstrap';
 
-export { Input };
+class Input extends Component {
+  render() {
+    const { size, placeholder } = this.props;
+    return (
+      <InputGroup size={size}>
+        <FormControl placeholder={placeholder} />
+      </InputGroup>
+    );
+  }
+}
+
+export default Input;
