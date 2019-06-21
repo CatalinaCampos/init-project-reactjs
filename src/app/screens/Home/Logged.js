@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import { ButtonDefault } from '../../components/';
+import React from 'react';
+import { ButtonDefault } from '../../components';
 import './style.css';
 
-class HomeLogged extends Component {
-  render() {
+const Logged = () => {
     return (
       <div>
         <h1>HOME LOGGED</h1>
@@ -12,6 +11,5 @@ class HomeLogged extends Component {
       </div>
     );
   }
-}
 
-export default HomeLogged;
+export default Logged;

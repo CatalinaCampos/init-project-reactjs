@@ -1,8 +1,8 @@
-import HomeDefault from './Home/HomeDefault';
-import HomeLogged from './Home/HomeLogged';
+import Default from './Home/Default';
+import Logged from './Home/Logged';
 import Login from './Login/Login';
 import CreateAccount from './Login/CreateAccount';
 import Profile from './Profile/Profile';
 import EditProfile from './Profile/EditProfile';
 
-export { HomeDefault, HomeLogged, Login, CreateAccount, Profile, EditProfile };
+export { Default, Logged, Login, CreateAccount, Profile, EditProfile };

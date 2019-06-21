@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ButtonDefault } from '../../components/';
 import './style.css';
 
-class EditProfile extends Component {
-  render() {
+const EditProfile = () => {
     return (
       <div>
         <h1>EDITAR PERFIL</h1>
@@ -11,6 +10,5 @@ class EditProfile extends Component {
       </div>
     );
   }
-}
 
 export default EditProfile;

@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Input, ButtonDefault, MainLogo } from '../../components/';
 import './style.css';
 
-class CreateAccount extends Component {
-  render() {
+const CreateAccount = () => {
     return (
       <div>
         <MainLogo />
@@ -14,6 +13,5 @@ class CreateAccount extends Component {
       </div>
     );
   }
-}
 
 export default CreateAccount;

@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ButtonDefault } from '../../components/';
 import './style.css';
 
-class Profile extends Component {
-  render() {
+const Profile = () => {
     return (
       <div>
         <h1>PERFIL</h1>
@@ -11,6 +10,5 @@ class Profile extends Component {
       </div>
     );
   }
-}
 
 export default Profile;

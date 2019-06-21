@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { InputGroup, FormControl } from 'react-bootstrap';
 
-class Input extends Component {
-  render() {
+const Input = () => {
     const { size, placeholder } = this.props;
     return (
       <InputGroup size={size}>
@@ -10,6 +9,5 @@ class Input extends Component {
       </InputGroup>
     );
   }
-}
 
 export default Input;

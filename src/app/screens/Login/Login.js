@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Input, ButtonDefault, MainLogo } from '../../components/';
 import './style.css';
 
-class Login extends Component {
-  render() {
+const Login = () => {
     return (
       <div>
         <MainLogo />
@@ -15,6 +14,5 @@ class Login extends Component {
       </div>
     );
   }
-}
 
 export default Login;
