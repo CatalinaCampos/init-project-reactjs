@@ -23,4 +23,21 @@ const images = [
     }
   ];
 
-  export { images };
+    const dataAccordion = [
+      {
+        title: 'Header 1',
+        body: 'body 1',
+        type: 'Card.Header',
+        variant: 'link',
+        eventKey: '0'
+      },
+      {
+        title: 'Header 2',
+        body: 'body 2',
+        type: 'Card.Header',
+        variant: 'link',
+        eventKey: '1'
+      }
+    ]
+
+  export { images, dataAccordion };

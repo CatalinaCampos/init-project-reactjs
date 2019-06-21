@@ -6,7 +6,7 @@ import {
   Title,
   Accordion
 } from '../../components';
-import { images } from '../../data/data'
+import { images, dataAccordion } from '../../data/data'
 import './style.css';
 
 const Default = () => {
@@ -16,22 +16,19 @@ const Default = () => {
           <MainLogo />
           <ButtonDefault
             name='Iniciar sesión'
-            variantType='link'
-            size='md'
+            variant='link'
             path='/login'
           />
           <ButtonDefault
             name='Crear cuenta'
-            variantType='outline-info'
-            size='md'
             path='/new-account'
           />
           <Title title='Home' />
-          <Accordion />
+          <Accordion items={dataAccordion}/>
           <ControlledCarousel items={images} />
         </div>
       </div>
     );
   }
 
-export default Default;
+export default Default; 

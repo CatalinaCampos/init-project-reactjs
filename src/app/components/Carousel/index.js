@@ -1,20 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Carousel from 'react-bootstrap/Carousel';
 
-const ControlledCarousel = ({ index, direction, items }) => {
-  return (
-    <Carousel activeIndex={index} direction={direction}>
+const ControlledCarousel = ({ items }) => (
+    <Carousel>
       {items.map((item) => (
-        <Carousel.Item>
+        <Carousel.Item key={item.title}>
           <img className='d-block w-100' src={item.image} alt='' />
           <Carousel.Caption>
-            <h3>{item.title}</h3>
-            <p>{item.subtitle}</p>
+            {item.title ? (<h3>{item.title}</h3>) : false}
+            {item.subtitle ? (<p>{item.subtitle}</p>) : false}
           </Carousel.Caption>
         </Carousel.Item>
       ))}
     </Carousel>
-  );
+);
+
+ControlledCarousel.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    image: PropTypes.string.isRequired,
+    subtitle: PropTypes.string
+  })).isRequired,
 };
 
 export default ControlledCarousel;
