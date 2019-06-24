@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, ButtonDefault, MainLogo } from '../../components/';
+import { BasicInput, ButtonDefault, MainLogo } from '../../components/';
 import './style.css';
 
 const Login = () => {
@@ -7,8 +7,8 @@ const Login = () => {
       <div>
         <MainLogo />
         <div className='container'>
-          <Input size='sm' placeholder='Correo' className='inputLogin' />
-          <Input size='sm' placeholder='Contraseña' className='inputLogin' />
+          <BasicInput size='sm' placeholder='Correo' className='inputLogin' />
+          <BasicInput size='sm' placeholder='Contraseña' className='inputLogin' />
           <ButtonDefault name='Ingresar' path='/home-auth' />
         </div>
       </div>

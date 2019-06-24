@@ -1,18 +1,47 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Card, CardGroup } from "react-bootstrap";
+import { Button, Card, CardGroup, CardDeck } from "react-bootstrap";
 
-//size problem
-const BasicCard = ({size, titleBtn, title, src, variantImg, text, variantBtn, subtitle, path, colorText, colorCard, colorBorder}) => (
-    <Card bg={colorCard} text={colorText} style={{ width: size }} border={colorBorder}>
-    {src ? (<Card.Img variant={variantImg} src={src}/>) : (<Card.Img variant={variantImg} />) }
+const BasicCard = ({
+  size,
+  titleBtn,
+  title,
+  src,
+  variantImg,
+  text,
+  variantBtn,
+  subtitle,
+  path,
+  colorText,
+  colorCard,
+  colorBorder
+}) => (
+  <Card
+    bg={colorCard}
+    text={colorText}
+    style={{ width: size }}
+    border={colorBorder}
+  >
+    {src ? (
+      <Card.Img variant={variantImg} src={src} />
+    ) : (
+      <Card.Img variant={variantImg} />
+    )}
     <Card.Body>
       <Card.Title>{title}</Card.Title>
-      {subtitle ? (<Card.Subtitle className="mb-2 text-muted">{subtitle}</Card.Subtitle>) : false }
-      <Card.Text>
-        {text}
-      </Card.Text>
-      {titleBtn ? (<Button variant={variantBtn} href={path}>{titleBtn}</Button>) : false }
+      {subtitle ? (
+        <Card.Subtitle className="mb-2 text-muted">{subtitle}</Card.Subtitle>
+      ) : (
+        false
+      )}
+      <Card.Text>{text}</Card.Text>
+      {titleBtn ? (
+        <Button variant={variantBtn} href={path}>
+          {titleBtn}
+        </Button>
+      ) : (
+        false
+      )}
     </Card.Body>
   </Card>
 );
@@ -33,35 +62,74 @@ BasicCard.prototype = {
 };
 
 BasicCard.defaultProps = {
-  size: '18rem',
-  titleBtn: '',
-  src: '',
-  variantImg: '',
-  variantBtn: '',
-  subtitle: '',
-  path: '',
-  colorText: 'black',
-  colorCard: 'light',
-  colorBorder: ''
+  size: "18rem",
+  titleBtn: "",
+  src: "",
+  variantImg: "",
+  variantBtn: "",
+  subtitle: "",
+  path: "",
+  colorText: "black",
+  colorCard: "light",
+  colorBorder: ""
 };
 
-const CardsGroup = ({}) => (
+const CardsGroupNoMargin = ({ items }) => (
   <CardGroup>
-{/* MAP */}
-  <Card>
-    <Card.Img variant="top" src={src} />
-    <Card.Body>
-      <Card.Title>{title}</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
-      </Card.Text>
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
+    {items.map((item) => (
+      <Card>
+        <Card.Img variant={item.variant} src={item.src} />
+        <Card.Body>
+          <Card.Title>{item.title}</Card.Title>
+          {item.text ? (<Card.Text>{item.text}</Card.Text>) : false}
+        </Card.Body>
+        {item.footer ? (<Card.Footer> <small className="text-muted">{item.footer}</small> </Card.Footer>) : false}
+      </Card>
+    ))}
   </CardGroup>
+);
+
+CardsGroupNoMargin.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    variant: PropTypes.string,
+    src: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string,
+    footer: PropTypes.string
+  })).isRequired
+};
+
+CardsGroupNoMargin.defaultProps = {
+  variant: 'top'
+};
+
+const CardsGroupMargin = ({ items }) => (
+  <CardDeck>
+    {items.map((item) => ( 
+  <Card>
+    <Card.Img variant={item.variant} src={item.src}/>
+    <Card.Body>
+      <Card.Title>{item.title}</Card.Title>
+      {item.text ? (<Card.Text>{item.text}</Card.Text>) : false}
+    </Card.Body>
+    {item.footer ? (<Card.Footer><small className="text-muted">{item.footer}</small></Card.Footer>) : false}
+  </Card>
+  ))}
+</CardDeck>
 )
 
-export { BasicCard, CardsGroup };
+CardsGroupMargin.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    variant: PropTypes.string,
+    src: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string,
+    footer: PropTypes.string
+  })).isRequired
+};
+
+CardsGroupMargin.defaultProps = {
+  variant: 'top'
+}
+
+export { BasicCard, CardsGroupNoMargin, CardsGroupMargin };

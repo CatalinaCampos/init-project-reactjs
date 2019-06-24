@@ -10,9 +10,23 @@ import {
   BadgeAlone,
   Pills,
   BtnGroup,
-  BasicCard
+  BasicCard,
+  CardsGroupNoMargin,
+  CardsGroupMargin,
+  BasicDropdown,
+  BasicInput,
+  InputPrepend,
+  InputPrependRight,
+  InputCheckbox,
+  InputRadio,
+  InputMultiAddon,
+  InputMultiAddonRight,
+  InputBtn,
+  InputBtnRight,
+  InputDropdown,
+  InputDropdownRight
 } from '../../components';
-import { images, dataAccordion, groupBtn } from '../../data/data'
+import { images, dataAccordion, groupBtn, cardGroup, dropdown, dataInputDropdown } from '../../data/data';
 import './style.css';
 
 const Default = () => {
@@ -28,7 +42,21 @@ const Default = () => {
           <ButtonDefault
             name='Crear cuenta'
             path='/new-account'
-          />
+          /> 
+          <InputDropdownRight items={dataInputDropdown} title='dropdown'/>
+          <InputDropdown items={dataInputDropdown} title='dropdown'/>
+          <InputBtnRight title='button'/>
+          <InputBtn title='button'/>
+          <InputMultiAddonRight placeholder='input' addon1='1' addon2='2'/>
+          <InputMultiAddon placeholder='input' addon1='1' addon2='2'/>
+          <InputRadio />
+          <InputCheckbox />
+          <InputPrependRight text='@'/>
+          <InputPrepend text='@' ariaLabel='hola' />
+          <BasicInput />
+          <BasicDropdown items={dropdown} title='dropdown' variant='info'/>
+          <CardsGroupMargin items={cardGroup}/>
+          <CardsGroupNoMargin items={cardGroup}/>
           <BasicCard size='18rem' variantImg='top' src='http://www.gifs-animados.es/wallpapers/wallpapers/ardillas/wallpaper-ardillas-4838185.jpg' title='Carta ardilla' text='Ardillita' variantBtn='link' titleBtn='Aceptar' subtitle='jejeje ardilla' colorCard='light' colorText='black' colorBorder='success'/>
           <br></br>
           <BtnGroup items={groupBtn} />
