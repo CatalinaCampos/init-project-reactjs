@@ -1,27 +1,27 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Accordion, Card } from "react-bootstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Accordion, Card, Button } from 'react-bootstrap';
 
 //Tip: only first accordin can be open at the beginning. If you want both closed, delete 'defaultActiveKey'
-const AccordionToggle = ({ items }) => (
-      <Accordion defaultActiveKey='0'>
+const AccordionToggle = ({ items }) => ( 
+  <Accordion defaultActiveKey='0'>
     {items.map((item) => (
-        <Card>
-          <Card.Header>
-            <Accordion.Toggle
-              as={item.type}
-              variant={item.variant}
-              eventKey={item.eventKey}
-            >
-              {item.title}
-            </Accordion.Toggle>
-          </Card.Header>
-          <Accordion.Collapse eventKey={item.eventKey}>
-            <Card.Body>{item.body}</Card.Body>
-          </Accordion.Collapse>
-        </Card>
+      <Card key={item.eventKey}>
+        <Card.Header>
+          <Accordion.Toggle
+            as={Button}
+            variant='link'
+            eventKey={item.eventKey}
+          >
+            {item.title}
+          </Accordion.Toggle>
+        </Card.Header>
+        <Accordion.Collapse eventKey={item.eventKey}>
+          <Card.Body>{item.body}</Card.Body>
+        </Accordion.Collapse>
+      </Card>
     ))}
-    </Accordion>
+  </Accordion>
 );
 
 AccordionToggle.prototype = {
@@ -37,7 +37,7 @@ AccordionToggle.prototype = {
 };
 
 AccordionToggle.defaultProps = {
-  variant: "link"
+  variant: 'link'
 };
 
 export default AccordionToggle;

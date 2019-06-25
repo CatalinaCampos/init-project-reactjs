@@ -1,20 +1,18 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   InputGroup,
   FormControl,
   Button,
   DropdownButton,
   Dropdown
-} from "react-bootstrap";
+} from 'react-bootstrap';
 
-const BasicInput = ({ size, placeholder }) => {
-  return (
+const BasicInput = ({ size, placeholder }) => (
     <InputGroup size={size}>
       <FormControl placeholder={placeholder} />
     </InputGroup>
-  );
-};
+);
 
 BasicInput.propTypes = {
   size: PropTypes.string,
@@ -23,7 +21,7 @@ BasicInput.propTypes = {
 
 BasicInput.defaultProps = {
   size: "sm",
-  placeholder: ""
+  placeholder: null
 };
 
 const InputPrepend = ({
@@ -54,7 +52,7 @@ InputPrepend.propTypes = {
 };
 
 InputPrepend.defaultProps = {
-  size: 'sm',
+  size: "sm",
   placeholder: null,
   ariaLabel: null,
   ariaDescribedby: null
@@ -87,8 +85,8 @@ InputPrependRight.propTypes = {
   text: PropTypes.string.isRequired
 };
 
-InputPrependRight.propTypes = {
-  size: 'sm',
+InputPrependRight.defaultProps = {
+  size: "sm",
   placeholder: null,
   ariaLabel: null,
   ariaDescribedby: null
@@ -97,7 +95,7 @@ InputPrependRight.propTypes = {
 const InputCheckbox = ({ size, ariaLabelInp, ariaLabelForm }) => (
   <InputGroup size={size} className="mb-3">
     <InputGroup.Prepend>
-      <InputGroup.Checkbox aria-label={ariaLabelInp}/>
+      <InputGroup.Checkbox aria-label={ariaLabelInp} />
     </InputGroup.Prepend>
     <FormControl aria-label={ariaLabelForm} />
   </InputGroup>
@@ -110,7 +108,7 @@ InputCheckbox.propTypes = {
 };
 
 InputCheckbox.defaultProps = {
-  size: 'sm',
+  size: "sm",
   ariaLabelInp: null,
   ariaDescribedby: null
 };
@@ -127,11 +125,11 @@ const InputRadio = ({ size, ariaLabelInp, ariaLabelForm }) => (
 InputRadio.propTypes = {
   size: PropTypes.string,
   ariaLabelInp: PropTypes.string,
-  ariaLabelForm: PropTypes.string,
+  ariaLabelForm: PropTypes.string
 };
 
-InputRadio.propTypes = {
-  size: 'sm',
+InputRadio.defaultProps = {
+  size: "sm",
   ariaLabelInp: null,
   ariaLabelForm: null
 };
@@ -159,7 +157,7 @@ InputMultiAddon.defaultProps = {
 };
 
 const InputMultiAddonRight = ({ placeholder, ariaLabel, addon1, addon2 }) => (
-  <InputGroup className="mb-3">
+  <InputGroup className='mb-3'>
     <FormControl placeholder={placeholder} aria-label={ariaLabel} />
     <InputGroup.Append>
       <InputGroup.Text>{addon1}</InputGroup.Text>
@@ -181,7 +179,7 @@ InputMultiAddonRight.defaultProps = {
 };
 
 const InputBtn = ({ variant, title, ariaDescribedby, placeholder }) => (
-  <InputGroup className="mb-3">
+  <InputGroup className='mb-3'>
     <InputGroup.Prepend>
       <Button variant={variant}>{title}</Button>
     </InputGroup.Prepend>
@@ -209,7 +207,7 @@ const InputBtnRight = ({
   variant,
   title
 }) => (
-  <InputGroup className="mb-3">
+  <InputGroup className='mb-3'>
     <FormControl
       placeholder={placeholder}
       aria-label={ariaLabel}
@@ -237,15 +235,15 @@ InputBtnRight.defaultProps = {
 };
 
 const InputDropdown = ({ items, variant, title, ariaDescribedby }) => (
-  <InputGroup className="mb-3">
+  <InputGroup className='mb-3'>
     <DropdownButton
       as={InputGroup.Prepend}
       variant={variant}
       title={title}
-      id="input-group-dropdown-1"
+      id='input-group-dropdown-1'
     >
       {items.map((item) => (
-        <Dropdown.Item href={item.path}>{item.text}</Dropdown.Item>
+        <Dropdown.Item href={item.path} key={item.key}>{item.text}</Dropdown.Item>
       ))}
     </DropdownButton>
     <FormControl aria-describedby={ariaDescribedby} />
@@ -256,18 +254,29 @@ InputDropdown.propTypes = {
   variant: PropTypes.string,
   title: PropTypes.string.isRequired,
   ariaDescribedby: PropTypes.string,
-  items: PropTypes.arrayOf(PropTypes.shape({
-    path: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired
-  })).isRequired
-}
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      path: PropTypes.string,
+      text: PropTypes.string.isRequired,
+      key: PropTypes.string.isRequired
+    })
+  ).isRequired
+};
 
 InputDropdown.defaultProps = {
-  variant: 'info',
-  ariaDescribedby: null
-}
+  variant: "info",
+  ariaDescribedby: null,
+  path: null
+};
 
-const InputDropdownRight = ({ items, placeholder, ariaLabel, ariaDescribedby, variant, title }) => (
+const InputDropdownRight = ({
+  items,
+  placeholder,
+  ariaLabel,
+  ariaDescribedby,
+  variant,
+  title
+}) => (
   <InputGroup>
     <FormControl
       placeholder={placeholder}
@@ -278,10 +287,10 @@ const InputDropdownRight = ({ items, placeholder, ariaLabel, ariaDescribedby, va
       as={InputGroup.Append}
       variant={variant}
       title={title}
-      id="input-group-dropdown-2"
+      id='input-group-dropdown-2'
     >
       {items.map((item) => (
-        <Dropdown.Item href={item.path}>{item.text}</Dropdown.Item>
+        <Dropdown.Item href={item.path} key={item.key}>{item.text}</Dropdown.Item>
       ))}
     </DropdownButton>
   </InputGroup>
@@ -293,11 +302,14 @@ InputDropdownRight.propTypes = {
   placeholder: PropTypes.string,
   ariaLabel: PropTypes.string,
   ariaDescribedby: PropTypes.string,
-  items: PropTypes.arrayOf(PropTypes.shape({
-    path: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    ariaDescribedby: PropTypes.string
-  })).isRequired
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      path: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+      ariaDescribedby: PropTypes.string,
+      key: PropTypes.string.isRequired
+    })
+  ).isRequired
 };
 
 InputDropdownRight.defaultProps = {

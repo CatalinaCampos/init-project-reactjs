@@ -1,18 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Badge, Button } from "react-bootstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Badge, Button } from 'react-bootstrap';
 
-//Tip:
 const BadgeWithText = ({ text, variant, title }) => (
   <p>
     {text}
-    <Badge variant={variant}>
-      {title}
-    </Badge>
+    <Badge variant={variant}>{title}</Badge>
   </p>
 );
 
-BadgeWithText.prototype = {
+BadgeWithText.propTypes = {
   text: PropTypes.string.isRequired,
   variant: PropTypes.string,
   title: PropTypes.string.isRequired
@@ -25,42 +22,47 @@ BadgeWithText.defaultProps = {
 const BadgeWithCounter = ({ variantBtn, text, variantBadge, counter }) => (
   <Button variant={variantBtn}>
     {text} <Badge variant={variantBadge}>{counter}</Badge>
-    {/* <span className="sr-only">unread messages</span> */}
   </Button>
 );
 
-BadgeWithText.prototype = {
+BadgeWithCounter.propTypes = {
   text: PropTypes.string.isRequired,
   variantBadge: PropTypes.string,
   variantBtn: PropTypes.string,
   counter: PropTypes.string.isRequired
 };
 
-BadgeWithText.defaultProps = {
+BadgeWithCounter.defaultProps = {
   variantBadge: 'info',
-  variantBtn: 'link',
+  variantBtn: 'light'
 };
 
-const BadgeAlone = ({variant, title}) => (
+const BadgeAlone = ({ variant, title }) => (
   <Badge variant={variant}>{title}</Badge>
-)
+);
 
-BadgeAlone.prototype = {
+BadgeAlone.propTypes = {
   title: PropTypes.string.isRequired,
   variant: PropTypes.string
 };
 
 BadgeAlone.defaultProps = {
-  variantBadge: 'info',
-  variantBtn: 'link',
+  variant: 'info'
 };
 
-const Pills = ({variant, title}) => ( 
+const Pills = ({ variant, title }) => (
   <Badge pill variant={variant}>
     {title}
   </Badge>
 );
 
+Pills.propTypes = {
+  variant: PropTypes.string,
+  title: PropTypes.string.isRequired
+};
 
+Pills.defaultProps = {
+  variant: 'info'
+};
 
 export { BadgeWithText, BadgeWithCounter, BadgeAlone, Pills };

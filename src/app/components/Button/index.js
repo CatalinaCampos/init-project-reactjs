@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Button, ButtonGroup } from "react-bootstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Button, ButtonGroup } from 'react-bootstrap';
 
 const ButtonDefault = ({ name, variant, size, path, ...props }) => (
   <Button variant={variant} size={size} href={path} {...props}>
@@ -8,34 +8,36 @@ const ButtonDefault = ({ name, variant, size, path, ...props }) => (
   </Button>
 );
 
-ButtonDefault.prototype = {
+ButtonDefault.propTypes = {
   variant: PropTypes.string,
   size: PropTypes.string,
   path: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  state: PropTypes.string
+  name: PropTypes.string.isRequired
 };
 
 ButtonDefault.defaultProps = {
-  variant: "outline-info",
-  size: "sm",
-  path: "",
-  state: ""
+  variant: 'outline-info',
+  size: 'sm',
+  path: null
 };
 
 const BtnGroup = ({ items }) => (
   <ButtonGroup>
     {items.map((item) => (
-      <Button variant={item.variant}>{item.title}</Button>
-    ))};
+      <Button variant={item.variant} key={item.key}>{item.title}</Button>
+    ))}
+    ;
   </ButtonGroup>
 );
 
-BtnGroup.prototype = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    variant: PropTypes.string,
-    title: PropTypes.string.isRequired
-  })).isRequired
+BtnGroup.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      variant: PropTypes.string,
+      title: PropTypes.string.isRequired,
+      key: PropTypes.string.isRequired
+    })
+  ).isRequired
 };
 
 BtnGroup.defaultProps = {
