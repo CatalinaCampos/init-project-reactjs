@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import { Button, ButtonGroup } from 'react-bootstrap';
 
 const ButtonDefault = ({ name, variant, size, path, ...props }) => (
+  <div style={{ display: 'flex' }}> 
   <Button variant={variant} size={size} href={path} {...props}>
     {name}
   </Button>
+  </div>
 );
 
 ButtonDefault.propTypes = {
@@ -26,7 +28,6 @@ const BtnGroup = ({ items }) => (
     {items.map((item) => (
       <Button variant={item.variant} key={item.key}>{item.title}</Button>
     ))}
-    ;
   </ButtonGroup>
 );
 

@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { Badge, Button } from 'react-bootstrap';
 
 const BadgeWithText = ({ text, variant, title }) => (
+  <div style={{ display: 'flex' }}> 
   <p>
     {text}
     <Badge variant={variant}>{title}</Badge>
   </p>
+  </div>
 );
 
 BadgeWithText.propTypes = {
@@ -20,9 +22,11 @@ BadgeWithText.defaultProps = {
 };
 
 const BadgeWithCounter = ({ variantBtn, text, variantBadge, counter }) => (
+  <div style={{ display: 'flex' }}> 
   <Button variant={variantBtn}>
     {text} <Badge variant={variantBadge}>{counter}</Badge>
   </Button>
+  </div>
 );
 
 BadgeWithCounter.propTypes = {
@@ -38,7 +42,9 @@ BadgeWithCounter.defaultProps = {
 };
 
 const BadgeAlone = ({ variant, title }) => (
+  <div style={{ display: 'flex' }}> 
   <Badge variant={variant}>{title}</Badge>
+  </div>
 );
 
 BadgeAlone.propTypes = {
@@ -51,9 +57,11 @@ BadgeAlone.defaultProps = {
 };
 
 const Pills = ({ variant, title }) => (
+  <div style={{ display: 'flex' }}> 
   <Badge pill variant={variant}>
     {title}
   </Badge>
+  </div>
 );
 
 Pills.propTypes = {

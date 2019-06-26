@@ -3,6 +3,7 @@ import React from 'react';
 import { Pagination } from 'react-bootstrap';
 
 const BasicPagination = () => (
+  <div style={{ display: 'flex' }}> 
   <Pagination>
     <Pagination.First />
     <Pagination.Prev />
@@ -20,6 +21,7 @@ const BasicPagination = () => (
     <Pagination.Next />
     <Pagination.Last />
   </Pagination>
+  </div>
 );
 
 export default BasicPagination;

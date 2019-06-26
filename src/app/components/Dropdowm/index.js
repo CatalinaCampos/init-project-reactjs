@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Dropdown } from 'react-bootstrap';
 
 const BasicDropdown = ({ variant, title, items }) => (
+  <div style={{ display: 'flex' }}> 
   <Dropdown>
     <Dropdown.Toggle variant={variant} id='dropdown-basic'>
       {title}
@@ -13,6 +14,7 @@ const BasicDropdown = ({ variant, title, items }) => (
       ))}
     </Dropdown.Menu>
   </Dropdown>
+  </div>
 );
 
 BasicDropdown.propTypes = {

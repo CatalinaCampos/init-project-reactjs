@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import './style.css';
+import "./style.css";
 
 const RenderCode = ({ ...props }) => (
-  <figure className='code'>
+  <div> 
+  <figure>
     <pre>
-      <code>
-        {props.children}
-      </code>
+      <code>{props.children}</code>
     </pre>
   </figure>
+  </div>
 );
 
 export default RenderCode;

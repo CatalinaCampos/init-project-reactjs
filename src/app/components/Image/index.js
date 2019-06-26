@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { Row, Col, Image } from 'react-bootstrap';
 
 const Images = ({ src, ...props }) => (
+  <div style={{ display: 'flex' }}> 
   <Row>
-    <Col xs={6} md={4}>
+    <Col>
       <Image src={src} {...props} />
     </Col>
   </Row>
+  </div>
 );
 
 Images.protoTypes = {

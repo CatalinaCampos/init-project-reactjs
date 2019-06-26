@@ -16,6 +16,7 @@ const BasicCard = ({
   colorCard,
   colorBorder
 }) => (
+  <div style={{ display: 'flex' }}> 
   <Card
     bg={colorCard}
     text={colorText}
@@ -44,6 +45,7 @@ const BasicCard = ({
       )}
     </Card.Body>
   </Card>
+  </div>
 );
 
 BasicCard.prototype = {
@@ -110,6 +112,7 @@ CardsGroupNoMargin.defaultProps = {
 };
 
 const CardsGroupMargin = ({ items }) => (
+  <div style={{ display: 'flex' }}> 
   <CardDeck>
     {items.map((item) => (
       <Card key={item.key}>
@@ -128,6 +131,7 @@ const CardsGroupMargin = ({ items }) => (
       </Card>
     ))}
   </CardDeck>
+  </div>
 );
 
 CardsGroupMargin.propTypes = {

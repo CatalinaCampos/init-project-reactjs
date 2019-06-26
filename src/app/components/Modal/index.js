@@ -42,6 +42,7 @@ class DefaultModal extends Component {
   render() {
     const {variantBtn, titleBtn, title, body, variantBtnClose, titleBtnClose, variantBtnSave, titleBtnSave} = this.props;
     return (
+      <div style={{ display: 'flex' }}> 
       <>
         <Button variant={variantBtn} onClick={this.handleShow}>
           {titleBtn}
@@ -62,6 +63,7 @@ class DefaultModal extends Component {
           </Modal.Footer>
         </Modal>
       </>
+      </div>
     );
   }
 }

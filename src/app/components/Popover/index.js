@@ -16,11 +16,13 @@ const BasicPopover = ({
     </Popover>
   );
   return (
+    <div style={{ display: 'flex' }}> 
     <OverlayTrigger trigger='click' placement={direction} overlay={popover}>
       <Button variant={variantBtn} {...props}>
         {titleBtn}
       </Button>
     </OverlayTrigger>
+    </div>
   );
 };
 

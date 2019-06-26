@@ -1,31 +1,17 @@
 const dataImages = [
   {
-    image:
-      'https://s2.best-wallpaper.net/wallpaper/1680x1050/1107/Squirrel-in-the-grass_1680x1050.jpg',
+    image: 'https://wallpaperstock.net/wallpapers/thumbs1/53718wide.jpg',
     title: '1',
     subtitle: 'Uno',
     key: '1'
   },
   {
-    image: 'https://wallpaperstock.net/wallpapers/thumbs1/53718wide.jpg',
+    image: 'http://www.fondox.net/wallpapers/una-ardilla-relajada-2033.jpg',
     title: '2',
     subtitle: 'Dos',
     key: '2'
-  },
-  {
-    image: 'http://www.fondox.net/wallpapers/una-ardilla-relajada-2033.jpg',
-    title: '3',
-    subtitle: 'Tres',
-    key: '3'
-  },
-  {
-    image:
-      'https://i.pinimg.com/736x/2d/c1/b5/2dc1b562c6cb0783ace045d66046dc24.jpg',
-    title: '4',
-    subtitle: 'Cuatro',
-    key: '4'
   }
-];
+]
 
 const dataAccordion = [
   {
