@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 import {
   InputGroup,
   FormControl,
   Button,
   DropdownButton,
   Dropdown
-} from 'react-bootstrap';
+} from "react-bootstrap";
 
 const BasicInput = ({ size, placeholder }) => (
-    <InputGroup size={size}>
-      <FormControl placeholder={placeholder} />
-    </InputGroup>
+  <InputGroup size={size}>
+    <FormControl placeholder={placeholder} />
+  </InputGroup>
 );
 
 BasicInput.propTypes = {
@@ -157,7 +157,7 @@ InputMultiAddon.defaultProps = {
 };
 
 const InputMultiAddonRight = ({ placeholder, ariaLabel, addon1, addon2 }) => (
-  <InputGroup className='mb-3'>
+  <InputGroup className="mb-3">
     <FormControl placeholder={placeholder} aria-label={ariaLabel} />
     <InputGroup.Append>
       <InputGroup.Text>{addon1}</InputGroup.Text>
@@ -179,7 +179,7 @@ InputMultiAddonRight.defaultProps = {
 };
 
 const InputBtn = ({ variant, title, ariaDescribedby, placeholder }) => (
-  <InputGroup className='mb-3'>
+  <InputGroup className="mb-3">
     <InputGroup.Prepend>
       <Button variant={variant}>{title}</Button>
     </InputGroup.Prepend>
@@ -195,7 +195,7 @@ InputBtn.propTypes = {
 };
 
 InputBtn.defaultProps = {
-  variant: 'info',
+  variant: "info",
   ariaDescribedby: null,
   placeholder: null
 };
@@ -207,7 +207,7 @@ const InputBtnRight = ({
   variant,
   title
 }) => (
-  <InputGroup className='mb-3'>
+  <InputGroup className="mb-3">
     <FormControl
       placeholder={placeholder}
       aria-label={ariaLabel}
@@ -231,19 +231,21 @@ InputBtnRight.defaultProps = {
   placeholder: null,
   ariaLabel: null,
   ariaDescribedby: null,
-  variant: 'info'
+  variant: "info"
 };
 
-const InputDropdown = ({ items, variant, title, ariaDescribedby }) => (
-  <InputGroup className='mb-3'>
+const InputDropdown = ({ items, variant, title, ariaDescribedby, size }) => (
+  <InputGroup className="mb-3" size={size}>
     <DropdownButton
       as={InputGroup.Prepend}
       variant={variant}
       title={title}
-      id='input-group-dropdown-1'
+      id="input-group-dropdown-1"
     >
       {items.map((item) => (
-        <Dropdown.Item href={item.path} key={item.key}>{item.text}</Dropdown.Item>
+        <Dropdown.Item href={item.path} key={item.key}>
+          {item.text}
+        </Dropdown.Item>
       ))}
     </DropdownButton>
     <FormControl aria-describedby={ariaDescribedby} />
@@ -254,6 +256,7 @@ InputDropdown.propTypes = {
   variant: PropTypes.string,
   title: PropTypes.string.isRequired,
   ariaDescribedby: PropTypes.string,
+  size: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       path: PropTypes.string,
@@ -266,7 +269,8 @@ InputDropdown.propTypes = {
 InputDropdown.defaultProps = {
   variant: "info",
   ariaDescribedby: null,
-  path: null
+  path: null,
+  size: "md"
 };
 
 const InputDropdownRight = ({
@@ -275,9 +279,10 @@ const InputDropdownRight = ({
   ariaLabel,
   ariaDescribedby,
   variant,
-  title
+  title,
+  size
 }) => (
-  <InputGroup>
+  <InputGroup size={size}>
     <FormControl
       placeholder={placeholder}
       aria-label={ariaLabel}
@@ -287,10 +292,12 @@ const InputDropdownRight = ({
       as={InputGroup.Append}
       variant={variant}
       title={title}
-      id='input-group-dropdown-2'
+      id="input-group-dropdown-2"
     >
       {items.map((item) => (
-        <Dropdown.Item href={item.path} key={item.key}>{item.text}</Dropdown.Item>
+        <Dropdown.Item href={item.path} key={item.key}>
+          {item.text}
+        </Dropdown.Item>
       ))}
     </DropdownButton>
   </InputGroup>
@@ -302,6 +309,7 @@ InputDropdownRight.propTypes = {
   placeholder: PropTypes.string,
   ariaLabel: PropTypes.string,
   ariaDescribedby: PropTypes.string,
+  size: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       path: PropTypes.string.isRequired,
@@ -313,10 +321,11 @@ InputDropdownRight.propTypes = {
 };
 
 InputDropdownRight.defaultProps = {
-  variant: 'info',
+  variant: "info",
   ariaDescribedby: null,
   ariaLabel: null,
-  placeholder: null
+  placeholder: null,
+  size: "md"
 };
 
 export {

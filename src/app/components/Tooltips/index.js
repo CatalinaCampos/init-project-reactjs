@@ -1,23 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 import {
   ButtonToolbar,
   OverlayTrigger,
   Button,
   Tooltip
-} from 'react-bootstrap';
+} from "react-bootstrap";
 
-const BasicTooltip = ({ items }) => (
+const BasicTooltip = ({ direction, text, variant, title }) => (
   <ButtonToolbar>
-    {items.map((item) => (
-      <OverlayTrigger
-        key={item.direction}
-        placement={item.direction}
-        overlay={<Tooltip>{item.text}</Tooltip>}
-      >
-        <Button variant={item.variant}>{item.title}</Button>
-      </OverlayTrigger>
-    ))}
+    <OverlayTrigger
+      key={direction}
+      placement={direction}
+      overlay={<Tooltip>{text}</Tooltip>}
+    >
+      <Button variant={variant}>{title}</Button>
+    </OverlayTrigger>
   </ButtonToolbar>
 );
 
@@ -34,7 +32,7 @@ BasicTooltip.protoTypes = {
 };
 
 BasicTooltip.defaultProps = {
-  variant: 'info'
+  variant: "info"
 };
 
 export default BasicTooltip;

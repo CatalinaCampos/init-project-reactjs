@@ -1,10 +1,9 @@
-import React from 'react';
-import logo from './logo_nnodes.png';
-import { Image } from 'react-bootstrap';
-import './style.css';
+import React from "react";
+import { Image } from "react-bootstrap";
+import "./style.scss";
 
-const MainLogo = () => {
-  return <Image src={logo} alt={logo} className='logo_nnodes' />;
+const MainLogo = ({ src, alt }) => {
+  return <Image src={src} alt={alt} className="logo_nnodes" />;
 };
 
 export default MainLogo;

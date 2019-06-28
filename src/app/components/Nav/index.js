@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Nav } from 'react-bootstrap';
+import React from "react";
+import PropTypes from "prop-types";
+import { Nav } from "react-bootstrap";
 
 const BaseNav = ({ items, variant }) => (
   <Nav variant={variant}>
@@ -12,7 +12,7 @@ const BaseNav = ({ items, variant }) => (
   </Nav>
 );
 
-BaseNav.protoTypes = {
+BaseNav.propTypes = {
   variant: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
@@ -24,14 +24,16 @@ BaseNav.protoTypes = {
 };
 
 BaseNav.defaultProps = {
-  variant: 'tabs',
+  variant: "tabs",
   path: null
 };
 
 const VerticalNav = ({ items, variant }) => (
-  <Nav variant={variant} className='flex-column'>
+  <Nav variant={variant} className="flex-column">
     {items.map((item) => (
-      <Nav.Link href={item.path} key={item.key}>{item.title}</Nav.Link>
+      <Nav.Link href={item.path} key={item.key}>
+        {item.title}
+      </Nav.Link>
     ))}
   </Nav>
 );
@@ -48,15 +50,15 @@ VerticalNav.protoTypes = {
 };
 
 VerticalNav.defaultProps = {
-  variant: 'tabs',
+  variant: "tabs",
   path: null
 };
 
 const NavPills = ({ variant, path }) => (
-  <Nav variant={variant} defaultActiveKey='/home'>
+  <Nav variant={variant} defaultActiveKey="/home">
     <Nav.Item>
       <Nav.Link href={path}>Active</Nav.Link>
-      <Nav.Link href='/home-auth'>Active</Nav.Link>
+      <Nav.Link href="/home-auth">Active</Nav.Link>
     </Nav.Item>
   </Nav>
 );

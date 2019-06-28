@@ -1,42 +1,40 @@
 h4 {
-    text-align: center;
-    padding: 10px
+  text-align: center;
+  padding: 10px;
 }
 
 .home {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
 }
 
 .example {
-    border: 2px solid gainsboro;
-    border-radius: 3px;
-    width: 50%;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-content: center
-}
-
-.code {
-    padding: 20px;
-    height: auto;
-    text-align: center;
-}
-
-.demo > img{
-    width: 100%;
-    justify-content: center;
+  width: 65%;
+  border: 1px solid #d4d5d7;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 5px;
 }
 
 .demo {
-    width: 100%;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 
-.demo > div{
-    width: 100%;
-    justify-content: center;
+.code {
+  text-align: center;
+  padding: 10px;
+}
+
+.tip,
+.dataType {
+  background-color: #f4f4f4;
+  height: auto;
+  text-align: center;
+  align-content: center;
 }
