@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Modal, Button, ButtonToolbar } from 'react-bootstrap';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Modal, Button, ButtonToolbar } from "react-bootstrap";
 
 class DefaultModal extends Component {
   static propTypes = {
@@ -15,9 +15,9 @@ class DefaultModal extends Component {
   };
 
   static defaultProps = {
-    variantBtn: 'info',
-    variantBtnClose: 'primary',
-    variantBtnSave: 'success'
+    variantBtn: "info",
+    variantBtnClose: "primary",
+    variantBtnSave: "success"
   };
 
   constructor(props, context) {
@@ -40,9 +40,17 @@ class DefaultModal extends Component {
   }
 
   render() {
-    const {variantBtn, titleBtn, title, body, variantBtnClose, titleBtnClose, variantBtnSave, titleBtnSave} = this.props;
+    const {
+      variantBtn,
+      titleBtn,
+      title,
+      body,
+      variantBtnClose,
+      titleBtnClose,
+      variantBtnSave,
+      titleBtnSave
+    } = this.props;
     return (
-      <div style={{ display: 'flex' }}> 
       <>
         <Button variant={variantBtn} onClick={this.handleShow}>
           {titleBtn}
@@ -63,13 +71,9 @@ class DefaultModal extends Component {
           </Modal.Footer>
         </Modal>
       </>
-      </div>
     );
   }
 }
-
-
-
 
 class CenteredModal extends Component {
   static propTypes = {
@@ -82,11 +86,11 @@ class CenteredModal extends Component {
 
   static defaultProps = {
     header: null,
-    size: 'lg'
+    size: "lg"
   };
 
   render() {
-    const {header, title, body, titlebtn, size} = this.props;
+    const { header, title, body, titlebtn, size } = this.props;
     return (
       <Modal
         {...this.props}
@@ -95,15 +99,11 @@ class CenteredModal extends Component {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            {header}
-          </Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter">{header}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <h4>{title}</h4>
-          <p>
-            {body}
-          </p>
+          <p>{body}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={this.props.onHide}>{titlebtn}</Button>
@@ -122,7 +122,7 @@ class ModalCenter extends React.Component {
 
   render() {
     let modalClose = () => this.setState({ modalShow: false });
-    const {header, title, body, titlebtn, size, titlebtnmodal} = this.props;
+    const { header, title, body, titlebtn, size, titlebtnmodal } = this.props;
     return (
       <ButtonToolbar>
         <Button
@@ -146,6 +146,5 @@ class ModalCenter extends React.Component {
     );
   }
 }
-
 
 export { DefaultModal, ModalCenter };

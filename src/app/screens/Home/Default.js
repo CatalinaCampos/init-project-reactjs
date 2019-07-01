@@ -72,7 +72,7 @@ const Default = () => (
       <div className="tip">
         <p>
           <strong>Required:</strong> type, eventKey, title, body
-          <strong> Default:</strong> variant: 'link'
+          <strong> Default:</strong> variant: "link"
         </p>
       </div>
     </div>
@@ -83,12 +83,12 @@ const Default = () => (
         <BadgeAlone title="badge" />
       </div>
       <div className="code">
-        <RenderCode>&lt;BadgeAlone title='badge' /&gt;</RenderCode>
+        <RenderCode>&lt;BadgeAlone title="badge" /&gt;</RenderCode>
       </div>
       <div className="tip">
         <p>
           <strong>Required:</strong> title
-          <strong> Default:</strong> variant: 'info'
+          <strong> Default:</strong> variant: "info"
         </p>
       </div>
     </div>
@@ -100,13 +100,13 @@ const Default = () => (
       </div>
       <div className="code">
         <RenderCode>
-          &lt;BadgeWithCounter text='badge con contador' counter='3' /&gt;
+          &lt;BadgeWithCounter text="badge con contador" counter="3" /&gt;
         </RenderCode>
       </div>
       <div className="tip">
         <p>
           <strong>Required:</strong> text, counter
-          <strong> Default:</strong> variantBadge: 'info', variantBtn: 'light'
+          <strong> Default:</strong> variantBadge: "info", variantBtn: "light"
         </p>
       </div>
     </div>
@@ -118,13 +118,13 @@ const Default = () => (
       </div>
       <div className="code">
         <RenderCode>
-          &lt;BadgeWithText text='Nuevo badge' title='Nuevo' /&gt;
+          &lt;BadgeWithText text="Nuevo badge" title="Nuevo" /&gt;
         </RenderCode>
       </div>
       <div className="tip">
         <p>
           <strong>Required:</strong> text, title
-          <strong> Default:</strong> variant: 'info'
+          <strong> Default:</strong> variant: "info"
         </p>
       </div>
     </div>
@@ -135,12 +135,12 @@ const Default = () => (
         <Pills title="pill" />
       </div>
       <div className="code">
-        <RenderCode>&lt;Pills title='pill' /&gt;</RenderCode>
+        <RenderCode>&lt;Pills title="pill" /&gt;</RenderCode>
       </div>
       <div className="tip">
         <p>
           <strong>Required:</strong> title
-          <strong> Default:</strong> variant: 'info'
+          <strong> Default:</strong> variant: "info"
         </p>
       </div>
     </div>
@@ -190,7 +190,7 @@ const Default = () => (
       <div className="tip">
         <p>
           <strong>Required:</strong> name.
-          <strong> Default:</strong> variant: 'info' size: 'sm' path: null
+          <strong> Default:</strong> variant: "info" size: "sm" path: null
           <strong> Optional:</strong> disable, block, active
         </p>
       </div>
@@ -213,7 +213,7 @@ const Default = () => (
       <div className="tip">
         <p>
           <strong>Required:</strong> title, key
-          <strong> Default:</strong> variant: 'info', size: 'md'
+          <strong> Default:</strong> variant: "info", size: "md"
         </p>
       </div>
     </div>
@@ -230,16 +230,16 @@ const Default = () => (
       </div>
       <div className="code">
         <RenderCode>
-          &lt;BasicCard src='linkImg' title='Title' text='Text'
-          titleBtn='Aceptar' /&gt;
+          &lt;BasicCard src="linkImg" title="Title" text="Text"
+          titleBtn="Aceptar"/&gt;
         </RenderCode>
       </div>
       <div className="tip">
         <p>
           <strong>Required:</strong> title, text
-          <strong> Default:</strong> size: '18rem', direction: 'top',
-          variantBtn: 'info', path: null, colorText: 'black', colorCard:
-          'light', colorBorder: null
+          <strong> Default:</strong> size: "18rem", direction: "top",
+          variantBtn: "info", path: null, colorText: "black", colorCard:
+          "light", colorBorder: null
           <strong> Optional:</strong> src, subtitle, titleBtn
         </p>
       </div>
@@ -258,13 +258,14 @@ const Default = () => (
       <div className="dataType">
         <RenderCode>
           const data = [ &#123; position: "top", src: "linkImg", title: "card
-          1", text: "text card 1", footer: "footer 1", key: "1" &#125;, ... ]
+          1", <br /> text: "text card 1", footer: "footer 1", key: "1" &#125;,
+          ... ]
         </RenderCode>
       </div>
       <div className="tip">
         <p>
           <strong>Required:</strong> src, title, key
-          <strong> Default:</strong> position: 'top'
+          <strong> Default:</strong> position: "top", size: "18rem"
           <strong> Optional:</strong> text, footer
         </p>
       </div>
@@ -283,13 +284,14 @@ const Default = () => (
       <div className="dataType">
         <RenderCode>
           const data = [ &#123; position: "top", src: "linkImg", title: "card
-          1", text: "text card 1", footer: "footer 1", key: "1" &#125;, ... ]
+          1", <br /> text: "text card 1", footer: "footer 1", key: "1" &#125;,
+          ... ]
         </RenderCode>
       </div>
       <div className="tip">
         <p>
           <strong>Required:</strong> src, title, key
-          <strong> Default:</strong> position: 'top'
+          <strong> Default:</strong> position: "top", size: "18rem"
           <strong> Optional:</strong> text, footer
         </p>
       </div>
@@ -330,8 +332,8 @@ const Default = () => (
       </div>
       <div className="code">
         <RenderCode>
-          &lt;BasicDropdown items=&#123;data&#125; titleDrop='dropdown'
-          variant='info' /&gt;
+          &lt;BasicDropdown items=&#123;data&#125; titleDrop="dropdown"
+          variant="info" /&gt;
         </RenderCode>
       </div>
       <div className="dataType">
@@ -343,7 +345,7 @@ const Default = () => (
       <div className="tip">
         <p>
           <strong>Required:</strong> titleDrop, title, key
-          <strong> Default:</strong> variant: 'info', path: null
+          <strong> Default:</strong> variant: "info", path: null
         </p>
       </div>
     </div>
@@ -370,7 +372,7 @@ const Default = () => (
       </div>
       <div className="code">
         <RenderCode>
-          &lt;InputDropdown items=&#123;data&#125; title='dropdown' /&gt;
+          &lt;InputDropdown items=&#123;data&#125; title="dropdown" /&gt;
         </RenderCode>
       </div>
       <div className="dataType">
@@ -383,7 +385,7 @@ const Default = () => (
         <p>
           <strong>Required:</strong> title, text, key
           <strong> Default:</strong> variant: "info", ariaDescribedby: null,
-          path: null, size: 'md'
+          path: null, size: "md"
         </p>
       </div>
     </div>
@@ -395,7 +397,7 @@ const Default = () => (
       </div>
       <div className="code">
         <RenderCode>
-          &lt;InputDropdownRight items=&#123;data&#125; title='dropdown' /&gt;
+          &lt;InputDropdownRight items=&#123;data&#125; title="dropdown" /&gt;
         </RenderCode>
       </div>
       <div className="dataType">
@@ -408,7 +410,7 @@ const Default = () => (
         <p>
           <strong>Required:</strong> title, text, key
           <strong> Default:</strong> variant: "info", ariaDescribedby: null,
-          path: null, size: 'md'
+          path: null, size: "md"
         </p>
       </div>
     </div>
@@ -419,7 +421,7 @@ const Default = () => (
         <InputBtn title="button" />
       </div>
       <div className="code">
-        <RenderCode>&lt;InputBtn title='button' /&gt;</RenderCode>
+        <RenderCode>&lt;InputBtn title="button" /&gt;</RenderCode>
       </div>
       <div className="tip">
         <p>
@@ -436,7 +438,7 @@ const Default = () => (
         <InputBtnRight title="button" />
       </div>
       <div className="code">
-        <RenderCode>&lt;InputBtnRight title='button' /&gt;</RenderCode>
+        <RenderCode>&lt;InputBtnRight title="button" /&gt;</RenderCode>
       </div>
       <div className="tip">
         <p>
@@ -454,7 +456,7 @@ const Default = () => (
       </div>
       <div className="code">
         <RenderCode>
-          &lt;InputMultiAddon placeholder='input' addon1='1' addon2='2' /&gt;
+          &lt;InputMultiAddon placeholder="input" addon1="1" addon2="2" /&gt;
         </RenderCode>
       </div>
       <div className="tip">
@@ -472,7 +474,7 @@ const Default = () => (
       </div>
       <div className="code">
         <RenderCode>
-          &lt;InputMultiAddonRight placeholder='input' addon1='1' addon2='2'
+          &lt;InputMultiAddonRight placeholder="input" addon1="1" addon2="2"
           /&gt;
         </RenderCode>
       </div>
@@ -522,7 +524,7 @@ const Default = () => (
         <InputPrepend text="@" />
       </div>
       <div className="code">
-        <RenderCode>&lt;InputPrepend text='@' /&gt;</RenderCode>
+        <RenderCode>&lt;InputPrepend text="@" /&gt;</RenderCode>
       </div>
       <div className="tip">
         <p>
@@ -539,7 +541,7 @@ const Default = () => (
         <InputPrependRight text="@" />
       </div>
       <div className="code">
-        <RenderCode>&lt;InputPrependRight text='@' /&gt;</RenderCode>
+        <RenderCode>&lt;InputPrependRight text="@" /&gt;</RenderCode>
       </div>
       <div className="tip">
         <p>
@@ -569,13 +571,13 @@ const Default = () => (
       </div>
       <div className="code">
         <RenderCode>
-          &lt;Images className='imgcuadrada' src='linkImg' rounded/&gt;
+          &lt;Images className="imgcuadrada" src="linkImg" rounded/&gt;
         </RenderCode>
         <RenderCode>
-          &lt;Images className='imgcuadrada' src='linkImg' roundedCircle/&gt;
+          &lt;Images className="imgcuadrada" src="linkImg" roundedCircle/&gt;
         </RenderCode>
         <RenderCode>
-          &lt;Images className='imgcuadrada' src='linkImg' thumbnail/&gt;
+          &lt;Images className="imgcuadrada" src="linkImg" thumbnail/&gt;
         </RenderCode>
       </div>
       <div className="tip">
@@ -592,7 +594,7 @@ const Default = () => (
         <ImageFluid src="https://blog.twitter.com/content/dam/blog-twitter/official/en_us/products/2017/rethinking-our-default-profile-photo/Avatar-Blog2-Round1.png.img.fullhd.medium.png" />
       </div>
       <div className="code">
-        <RenderCode>&lt;ImageFluid src='linkImg'/&gt;</RenderCode>
+        <RenderCode>&lt;ImageFluid src="linkImg"/&gt;</RenderCode>
       </div>
       <div className="tip">
         <p>
@@ -618,7 +620,7 @@ const Default = () => (
       <div className="tip">
         <p>
           <strong>Required:</strong> title, key
-          <strong> Default:</strong> variant: 'info', size: 'sm'
+          <strong> Default:</strong> variant: "info", size: "sm"
         </p>
       </div>
     </div>
@@ -636,17 +638,17 @@ const Default = () => (
       </div>
       <div className="code">
         <RenderCode>
-          &lt;DefaultModal titleBtn='Modal default' title='Título modal' <br />
-          body='Body modal' titleBtnClose='Close modal' titleBtnSave='Save
-          modal'/&gt;
+          &lt;DefaultModal titleBtn="Modal default" title="Título modal" <br />
+          body="Body modal" titleBtnClose="Close modal" titleBtnSave="Save
+          modal"/&gt;
         </RenderCode>
       </div>
       <div className="tip">
         <p>
           <strong>Required:</strong> titleBtn, title, body, titleBtnClose,
           titleBtnSave
-          <strong> Default:</strong> variantBtn: 'info', variantBtnClose:
-          'primary', variantBtnSave: 'success'
+          <strong> Default:</strong> variantBtn: "info", variantBtnClose:
+          "primary", variantBtnSave: "success"
         </p>
       </div>
     </div>
@@ -664,15 +666,15 @@ const Default = () => (
       </div>
       <div className="code">
         <RenderCode>
-          &lt;ModalCenter header='Modal' title='modal title' body='modal body'
+          &lt;ModalCenter header="Modal" title="modal title" body="modal body"
           <br />
-          titlebtn='close' titlebtnmodal='Modal centrado'/&gt;
+          titlebtn="close" titlebtnmodal="Modal centrado"/&gt;
         </RenderCode>
       </div>
       <div className="tip">
         <p>
           <strong>Required:</strong> title, body, titleBtn
-          <strong> Default:</strong> header: null, size: 'lg'
+          <strong> Default:</strong> header: null, size: "lg"
         </p>
       </div>
     </div>
@@ -683,7 +685,7 @@ const Default = () => (
         <MainLogo src="https://nnodes.com/Logo_Nnodes.png" alt="logo" />
       </div>
       <div className="code">
-        <RenderCode>&lt;MainLogo src='linkImg' alt='logo'/&gt;</RenderCode>
+        <RenderCode>&lt;MainLogo src="linkImg" alt="logo"/&gt;</RenderCode>
       </div>
       <div className="tip">
         <p>
@@ -699,7 +701,7 @@ const Default = () => (
       </div>
       <div className="code">
         <RenderCode>
-          &lt;BaseNav items=&#123;data&#125; variant='tabs' active='/home' /&gt;
+          &lt;BaseNav items=&#123;data&#125; variant="tabs" active="/home" /&gt;
         </RenderCode>
       </div>
       <div className="dataType">
@@ -711,7 +713,7 @@ const Default = () => (
       <div className="tip">
         <p>
           <strong>Required:</strong> title, key
-          <strong> Default:</strong> variant: 'tabs', path: null
+          <strong> Default:</strong> variant: "tabs", path: null
         </p>
       </div>
     </div>
@@ -733,7 +735,7 @@ const Default = () => (
       <div className="tip">
         <p>
           <strong>Required:</strong> title, key
-          <strong> Default:</strong> variant: 'tabs', path: null
+          <strong> Default:</strong> variant: "tabs", path: null
         </p>
       </div>
     </div>
@@ -764,18 +766,18 @@ const Default = () => (
       </div>
       <div className="code">
         <RenderCode>
-          &lt;BasicPopover title='popover' titleBtn='popover disabled' disabled
+          &lt;BasicPopover title="popover" titleBtn="popover disabled" disabled
           /&gt;
         </RenderCode>
         <RenderCode>
-          &lt;BasicPopover title='popover' titleBtn='popover active' /&gt;
+          &lt;BasicPopover title="popover" titleBtn="popover active" /&gt;
         </RenderCode>
       </div>
       <div className="tip">
         <p>
           <strong>Required:</strong> title, titleBtn
-          <strong> Default:</strong> body: null, direction: 'bottom',
-          variantBtn: 'info'
+          <strong> Default:</strong> body: null, direction: "bottom",
+          variantBtn: "info"
         </p>
       </div>
     </div>
@@ -833,7 +835,7 @@ const Default = () => (
       <div className="tip">
         <p>
           <strong>Required:</strong> direction, text, title, key.
-          <strong> Default:</strong> variant: 'info'
+          <strong> Default:</strong> variant: "info"
         </p>
       </div>
     </div>
@@ -844,7 +846,7 @@ const Default = () => (
         <Title title="Home" />
       </div>
       <div className="code">
-        <RenderCode>&lt;Title title='Home' /&gt;</RenderCode>
+        <RenderCode>&lt;Title title="Home" /&gt;</RenderCode>
       </div>
       <div className="tip">
         <p>
@@ -860,7 +862,7 @@ const Default = () => (
       </div>
       <div className="code">
         <RenderCode>
-          &lt;BasicToast body='body toast' title='btn toast' header='header'
+          &lt;BasicToast body="body toast" title="btn toast" header="header"
           /&gt;
         </RenderCode>
       </div>
@@ -876,7 +878,7 @@ const Default = () => (
 
 export default Default;
 
-/* <div className='example'> 
+/* <div className="example"> 
 <RenderCode>
 &lt; &gt;
 </RenderCode>

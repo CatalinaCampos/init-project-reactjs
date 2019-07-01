@@ -1,14 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Title = ({ title }) => ( 
-  <div style={{ display: 'flex' }}> 
-    <h1>{title}</h1> 
-  </div>
-);
+const Title = ({ title }) => <h1>{title}</h1>;
 
-
-Title.prototype = {
+Title.propTypes = {
   title: PropTypes.string.isRequired
 };
 

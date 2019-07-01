@@ -19,16 +19,11 @@ const BasicTooltip = ({ direction, text, variant, title }) => (
   </ButtonToolbar>
 );
 
-BasicTooltip.protoTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      direction: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      variant: PropTypes.string,
-      key: PropTypes.string.isRequired
-    })
-  ).isRequired
+BasicTooltip.propTypes = {
+  direction: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  variant: PropTypes.string
 };
 
 BasicTooltip.defaultProps = {

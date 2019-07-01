@@ -3,20 +3,18 @@ import PropTypes from "prop-types";
 import { Dropdown } from "react-bootstrap";
 
 const BasicDropdown = ({ variant, titleDrop, items }) => (
-  <div style={{ display: "flex" }}>
-    <Dropdown>
-      <Dropdown.Toggle variant={variant} id="dropdown-basic">
-        {titleDrop}
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        {items.map((item) => (
-          <Dropdown.Item href={item.path} key={item.key}>
-            {item.title}
-          </Dropdown.Item>
-        ))}
-      </Dropdown.Menu>
-    </Dropdown>
-  </div>
+  <Dropdown>
+    <Dropdown.Toggle variant={variant} id="dropdown-basic">
+      {titleDrop}
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      {items.map((item) => (
+        <Dropdown.Item href={item.path} key={item.key}>
+          {item.title}
+        </Dropdown.Item>
+      ))}
+    </Dropdown.Menu>
+  </Dropdown>
 );
 
 BasicDropdown.propTypes = {

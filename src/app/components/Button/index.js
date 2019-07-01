@@ -3,11 +3,9 @@ import PropTypes from "prop-types";
 import { Button, ButtonGroup } from "react-bootstrap";
 
 const ButtonDefault = ({ name, variant, size, path, ...props }) => (
-  <div style={{ display: "flex" }}>
-    <Button variant={variant} size={size} href={path} {...props}>
-      {name}
-    </Button>
-  </div>
+  <Button variant={variant} size={size} href={path} {...props}>
+    {name}
+  </Button>
 );
 
 ButtonDefault.propTypes = {

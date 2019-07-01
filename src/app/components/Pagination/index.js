@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
 //import PropTypes from 'prop-types';
-import { Pagination } from 'react-bootstrap';
+import { Pagination } from "react-bootstrap";
 
 const BasicPagination = () => (
-  <div style={{ display: 'flex' }}> 
   <Pagination>
     <Pagination.First />
     <Pagination.Prev />
@@ -21,7 +20,6 @@ const BasicPagination = () => (
     <Pagination.Next />
     <Pagination.Last />
   </Pagination>
-  </div>
 );
 
 export default BasicPagination;

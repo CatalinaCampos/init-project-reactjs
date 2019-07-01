@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Popover, OverlayTrigger, Button } from 'react-bootstrap';
+import React from "react";
+import PropTypes from "prop-types";
+import { Popover, OverlayTrigger, Button } from "react-bootstrap";
 
 const BasicPopover = ({
   body,
@@ -11,18 +11,16 @@ const BasicPopover = ({
   ...props
 }) => {
   const popover = (
-    <Popover id='popover-basic' title={title}>
+    <Popover id="popover-basic" title={title}>
       {body}
     </Popover>
   );
   return (
-    <div style={{ display: 'flex' }}> 
-    <OverlayTrigger trigger='click' placement={direction} overlay={popover}>
+    <OverlayTrigger trigger="click" placement={direction} overlay={popover}>
       <Button variant={variantBtn} {...props}>
         {titleBtn}
       </Button>
     </OverlayTrigger>
-    </div>
   );
 };
 
@@ -36,8 +34,8 @@ BasicPopover.propTypes = {
 
 BasicPopover.defaultProps = {
   body: null,
-  direction: 'bottom',
-  variantBtn: 'info'
+  direction: "bottom",
+  variantBtn: "info"
 };
 
 export default BasicPopover;

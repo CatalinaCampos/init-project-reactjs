@@ -1,14 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Badge, Button } from 'react-bootstrap';
+import React from "react";
+import PropTypes from "prop-types";
+import { Badge, Button } from "react-bootstrap";
 
 const BadgeWithText = ({ text, variant, title }) => (
-  <div style={{ display: 'flex' }}> 
   <p>
     {text}
     <Badge variant={variant}>{title}</Badge>
   </p>
-  </div>
 );
 
 BadgeWithText.propTypes = {
@@ -18,15 +16,13 @@ BadgeWithText.propTypes = {
 };
 
 BadgeWithText.defaultProps = {
-  variant: 'info'
+  variant: "info"
 };
 
 const BadgeWithCounter = ({ variantBtn, text, variantBadge, counter }) => (
-  <div style={{ display: 'flex' }}> 
   <Button variant={variantBtn}>
     {text} <Badge variant={variantBadge}>{counter}</Badge>
   </Button>
-  </div>
 );
 
 BadgeWithCounter.propTypes = {
@@ -37,14 +33,12 @@ BadgeWithCounter.propTypes = {
 };
 
 BadgeWithCounter.defaultProps = {
-  variantBadge: 'info',
-  variantBtn: 'light'
+  variantBadge: "info",
+  variantBtn: "light"
 };
 
 const BadgeAlone = ({ variant, title }) => (
-  <div style={{ display: 'flex' }}> 
   <Badge variant={variant}>{title}</Badge>
-  </div>
 );
 
 BadgeAlone.propTypes = {
@@ -53,15 +47,13 @@ BadgeAlone.propTypes = {
 };
 
 BadgeAlone.defaultProps = {
-  variant: 'info'
+  variant: "info"
 };
 
 const Pills = ({ variant, title }) => (
-  <div style={{ display: 'flex' }}> 
   <Badge pill variant={variant}>
     {title}
   </Badge>
-  </div>
 );
 
 Pills.propTypes = {
@@ -70,7 +62,7 @@ Pills.propTypes = {
 };
 
 Pills.defaultProps = {
-  variant: 'info'
+  variant: "info"
 };
 
 export { BadgeWithText, BadgeWithCounter, BadgeAlone, Pills };
