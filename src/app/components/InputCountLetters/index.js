@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { Component } from "react";
 
 class InputCountLetters extends Component {
@@ -7,6 +8,14 @@ class InputCountLetters extends Component {
       text: ""
     };
   }
+
+  static propTypes = {
+    limitLength: PropTypes.string
+  };
+
+  static defaultProps = {
+    limitLength: "120"
+  };
 
   handleSave = (e) => {
     this.setState({
