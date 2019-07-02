@@ -8,20 +8,22 @@ import {
   Dropdown
 } from "react-bootstrap";
 
-const BasicInput = ({ size, placeholder }) => (
+const BasicInput = ({ size, placeholder, value }) => (
   <InputGroup size={size}>
-    <FormControl placeholder={placeholder} />
+    <FormControl placeholder={placeholder} value={value} />
   </InputGroup>
 );
 
 BasicInput.propTypes = {
   size: PropTypes.string,
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  value: PropTypes.string
 };
 
 BasicInput.defaultProps = {
   size: "sm",
-  placeholder: null
+  placeholder: null,
+  value: null
 };
 
 const InputPrepend = ({

@@ -5,16 +5,20 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "connected-react-router": "^6.4.0",
+    "draft-js": "^0.10.5",
+    "draftjs-utils": "^0.9.3",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.6",
+    "react-draft-wysiwyg": "^1.13.2",
     "react-redux": "^7.1.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "wysiwyg-editor-react": "^0.1.7"
   },
   "scripts": {
     "start": "react-scripts start",
