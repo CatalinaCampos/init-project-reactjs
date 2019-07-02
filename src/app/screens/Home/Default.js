@@ -39,7 +39,8 @@ import {
   ImageFluid,
   RenderCode,
   NestedForm,
-  ControlledEditor
+  ControlledEditor,
+  InputCountLetters
 } from "../../components";
 import {
   dataImages,
@@ -62,6 +63,21 @@ class Default extends Component {
   render() {
     return (
       <div className="container-fluid home">
+        <div className="example">
+          <h4>Input count letters</h4>
+          <div className="demo">
+            <InputCountLetters limit="120" />
+          </div>
+          <div className="code">
+            <RenderCode>&lt;InputCountLetters limit="120" /&gt;</RenderCode>
+          </div>
+          <div className="tip">
+            <p>
+              <strong> Default:</strong> limit: "120"
+            </p>
+          </div>
+        </div>
+
         <div className="example">
           <h4>WYSIWYG</h4>
           <div className="demo">

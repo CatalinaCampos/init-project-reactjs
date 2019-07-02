@@ -1,4 +1,5 @@
 import BasicDropdown from "./Dropdowm/";
+import InputCountLetters from "./InputCountLetters/";
 import ControlledEditor from "./Editor/";
 import NestedForm from "./NestedForm/";
 import RenderCode from "./RenderCode/";
@@ -71,5 +72,6 @@ export {
   ImageFluid,
   RenderCode,
   NestedForm,
-  ControlledEditor
+  ControlledEditor,
+  InputCountLetters
 };
