@@ -33,15 +33,13 @@ class InputCountLetters extends Component {
           onChange={this.handleSave}
         />
 
-        {this.state.text.length <= limitLength - 5 ? (
-          <p>
-            {this.state.text.length}/{limitLength}
-          </p>
-        ) : (
-          <p style={{ color: "red" }}>
-            {this.state.text.length}/{limitLength}
-          </p>
-        )}
+        <p
+          style={{
+            color: this.state.text.length <= limitLength - 10 ? "black" : "red"
+          }}
+        >
+          {this.state.text.length}/{limitLength}
+        </p>
       </div>
     );
   }

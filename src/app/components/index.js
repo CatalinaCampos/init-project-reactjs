@@ -1,4 +1,5 @@
 import BasicDropdown from "./Dropdowm/";
+import PTruncate from "./PTruncate/";
 import InputCountLetters from "./InputCountLetters/";
 import ControlledEditor from "./Editor/";
 import NestedForm from "./NestedForm/";
@@ -73,5 +74,6 @@ export {
   RenderCode,
   NestedForm,
   ControlledEditor,
-  InputCountLetters
+  InputCountLetters,
+  PTruncate
 };

@@ -40,7 +40,8 @@ import {
   RenderCode,
   NestedForm,
   ControlledEditor,
-  InputCountLetters
+  InputCountLetters,
+  PTruncate
 } from "../../components";
 import {
   dataImages,
@@ -64,6 +65,23 @@ class Default extends Component {
     return (
       <div className="container-fluid home">
         <div className="example">
+          <h4>P Truncate</h4>
+          <div className="demo">
+            <PTruncate text="12345678901234" maxLength="13" />
+          </div>
+          <div className="code">
+            <RenderCode>
+              &lt;PTruncate text="12345678901234" maxLength="13" /&gt;
+            </RenderCode>
+          </div>
+          <div className="tip">
+            <p>
+              <strong>Required:</strong> text, maxLength
+            </p>
+          </div>
+        </div>
+
+        <div className="example">
           <h4>Input count letters</h4>
           <div className="demo">
             <InputCountLetters limit="120" />
@@ -73,7 +91,7 @@ class Default extends Component {
           </div>
           <div className="tip">
             <p>
-              <strong> Default:</strong> limit: "120"
+              <strong>Default:</strong> limit: "120"
             </p>
           </div>
         </div>
