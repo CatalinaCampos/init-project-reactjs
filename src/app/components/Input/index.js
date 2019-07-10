@@ -5,15 +5,15 @@ import {
   FormControl,
   Button,
   DropdownButton,
-  Dropdown
+  Dropdown,
+  Form
 } from "react-bootstrap";
 
-const BasicInput = ({ size, placeholder, value, change }) => (
-  <InputGroup size={size}>
-    <FormControl placeholder={placeholder} value={value} onChange={change} />
+const BasicInput = ({ size, placeholder, value, change, width, classN }) => (
+  <InputGroup size={size} style={{ width: width }}>
+    <FormControl placeholder={placeholder} className={classN} />
   </InputGroup>
 );
-
 BasicInput.propTypes = {
   size: PropTypes.string,
   placeholder: PropTypes.string,
@@ -331,6 +331,14 @@ InputDropdownRight.defaultProps = {
   size: "md"
 };
 
+const CheckBox = ({ text }) => (
+  <Form>
+    <Form.Group controlId="formBasicChecbox">
+      <Form.Check type="checkbox" label={text} />
+    </Form.Group>
+  </Form>
+);
+
 export {
   BasicInput,
   InputPrepend,
@@ -342,5 +350,6 @@ export {
   InputBtn,
   InputBtnRight,
   InputDropdown,
-  InputDropdownRight
+  InputDropdownRight,
+  CheckBox
 };

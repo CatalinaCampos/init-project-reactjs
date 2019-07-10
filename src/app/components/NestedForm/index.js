@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { ButtonDefault } from "../index";
 import "./style.css";
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 
 class NestedForm extends Component {
   constructor(props) {

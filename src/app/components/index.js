@@ -26,12 +26,14 @@ import {
   InputBtn,
   InputBtnRight,
   InputDropdown,
-  InputDropdownRight
+  InputDropdownRight,
+  CheckBox
 } from "./Input/";
 import ControlledCarousel from "./Carousel/";
 import Title from "./Title/";
 import AccordionToggle from "./Accordion/";
 import { BadgeWithText, BadgeWithCounter, BadgeAlone, Pills } from "./Badge/";
+import { PrincipalNavbar, NavbarTop } from "./Navbar/";
 
 export {
   ButtonDefault,
@@ -75,5 +77,8 @@ export {
   NestedForm,
   ControlledEditor,
   InputCountLetters,
-  PTruncate
+  PTruncate,
+  PrincipalNavbar,
+  NavbarTop,
+  CheckBox
 };

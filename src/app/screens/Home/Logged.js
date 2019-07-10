@@ -1,14 +1,22 @@
 import React from "react";
-import { ButtonDefault } from "../../components";
+// import { ButtonDefault } from "../../components";
+import { Container, Row, Col } from "react-bootstrap";
+
 import "./style.scss";
 
 const Logged = () => {
   return (
-    <div>
-      <h1>HOME LOGGED</h1>
-      <ButtonDefault name="Cerrar Sesión" path="/" />
-      <ButtonDefault name="Perfil" path="/profile" />
-    </div>
+    <Container>
+      <Row>
+        <Col>1 of 2</Col>
+        <Col>2 of 2</Col>
+      </Row>
+      <Row>
+        <Col>1 of 3</Col>
+        <Col>2 of 3</Col>
+        <Col>3 of 3</Col>
+      </Row>
+    </Container>
   );
 };
 
