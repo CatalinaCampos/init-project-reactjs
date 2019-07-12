@@ -11,7 +11,12 @@ import {
 
 const BasicInput = ({ size, placeholder, value, change, width, classN }) => (
   <InputGroup size={size} style={{ width: width }}>
-    <FormControl placeholder={placeholder} className={classN} />
+    <FormControl
+      placeholder={placeholder}
+      className={classN}
+      value={value}
+      onChange={change}
+    />
   </InputGroup>
 );
 BasicInput.propTypes = {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "react-bootstrap";
+import { Navbar, Row, Col, Container } from "react-bootstrap";
 import { ButtonDefault, MainLogo } from "../../components/";
 
 const PrincipalNavbar = ({ children }) => (
@@ -9,11 +9,17 @@ const PrincipalNavbar = ({ children }) => (
 );
 
 const NavbarTop = () => (
-  <PrincipalNavbar>
-    <MainLogo src="https://i.imgur.com/LP69Ill.png" width="40px" />
-    <ButtonDefault variant="link" name="Iniciar Sesión" path="/login" />
-    <ButtonDefault variant="outline-info" name="Crear Cuenta" />
-  </PrincipalNavbar>
+  <Container>
+    <Row>
+      <Col>
+        <PrincipalNavbar>
+          <MainLogo src="https://i.imgur.com/LP69Ill.png" width="40px" />
+          <ButtonDefault variant="link" name="Iniciar Sesión" path="/login" />
+          <ButtonDefault variant="outline-info" name="Crear Cuenta" />
+        </PrincipalNavbar>
+      </Col>
+    </Row>
+  </Container>
 );
 
 export { PrincipalNavbar, NavbarTop };
