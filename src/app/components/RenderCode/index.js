@@ -1,14 +1,17 @@
-import React from "react";
-import "./style.scss";
+import React from 'react';
+import './style.scss';
 
-const RenderCode = ({ ...props }) => (
-  <div>
-    <figure>
-      <pre>
-        <code>{props.children}</code>
-      </pre>
-    </figure>
-  </div>
-);
+const RenderCode = ({ ...props }) => {
+  const { children } = props;
+  return (
+    <div>
+      <figure>
+        <pre>
+          <code>{children}</code>
+        </pre>
+      </figure>
+    </div>
+  );
+};
 
 export default RenderCode;

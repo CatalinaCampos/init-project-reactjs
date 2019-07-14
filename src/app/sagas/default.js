@@ -1,16 +1,18 @@
 import { call, put, race, delay } from 'redux-saga/effects';
-import API from '../services/api';
+import API_CONFIG from '../config/configurations';
 
 const SET_NOTICE = '';
+const { globalTimeout, timeoutMessage } = API_CONFIG;
+
 function* runDefaultSaga(callRequest, successCallback, failureCallback) {
   try {
     const { response, timeout } = yield race({
       response: call(callRequest.request, callRequest.params),
-      timeout: delay(API.getGlobalTimeout())
+      timeout: delay(globalTimeout)
     });
     console.log(callRequest);
 
-    if (timeout) throw new Error(API.getTimeoutMessage());
+    if (timeout) throw new Error(timeoutMessage);
 
     if (response.ok) {
       const result = yield response.json();

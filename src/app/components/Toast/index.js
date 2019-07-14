@@ -10,11 +10,10 @@ class BasicToast extends Component {
     title: PropTypes.string.isRequired,
     header: PropTypes.string.isRequired
   };
-  
+
   static defaultProps = {
     src: null,
-    text: null,
-    title: null
+    text: null
   };
 
   constructor(props) {
@@ -22,7 +21,7 @@ class BasicToast extends Component {
     this.state = {
       show: false
     };
-  };
+  }
 
   render() {
     const { show } = this.state;
@@ -34,8 +33,8 @@ class BasicToast extends Component {
         <Col xs={6}>
           <Toast onClose={handleClose} show={show} delay={3000} autohide>
             <Toast.Header>
-              <img src={src} className='rounded mr-2' alt='' />
-              <strong className='mr-auto'>{header}</strong>
+              <img src={src} className="rounded mr-2" alt="" />
+              <strong className="mr-auto">{header}</strong>
               <small>{text}</small>
             </Toast.Header>
             <Toast.Body>{body}</Toast.Body>
@@ -47,6 +46,6 @@ class BasicToast extends Component {
       </Row>
     );
   }
-}; 
+}
 
 export default BasicToast;

@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+/* eslint-disable react/no-unescaped-entities */
+import React, { Component } from 'react';
 import {
   DefaultButton,
   MainLogo,
@@ -28,7 +29,6 @@ import {
   ListGroups,
   BaseNav,
   VerticalNav,
-  //NavPills,
   BasicPagination,
   BasicTooltip,
   BasicToast,
@@ -42,7 +42,7 @@ import {
   ControlledEditor,
   InputCountLetters,
   PTruncate
-} from "../../components";
+} from '../../components';
 import {
   dataImages,
   dataAccordion,
@@ -52,8 +52,7 @@ import {
   dataInputDropdown,
   dataListGroup,
   dataNav
-} from "../../data/data";
-import "./style.scss";
+} from '../../data/data';
 
 class Default extends Component {
   constructor(props) {
@@ -84,7 +83,7 @@ class Default extends Component {
         <div className="example">
           <h4>Input count letters</h4>
           <div className="demo">
-            <InputCountLetters limit="120" />
+            <InputCountLetters limit={120} />
           </div>
           <div className="code">
             <RenderCode>&lt;InputCountLetters limit="120" /&gt;</RenderCode>
@@ -111,10 +110,7 @@ class Default extends Component {
           <div className="demo">
             <NestedForm>
               <BasicInput placeholder="Nombre" />
-              <BasicInput
-                placeholder="Apellido"
-                value={this.props.valueInput}
-              />
+              <BasicInput placeholder="Apellido" />
             </NestedForm>
           </div>
           <div className="code">
@@ -721,7 +717,7 @@ class Default extends Component {
           </div>
           <div className="code">
             <RenderCode>
-              &lt;DefaultModal titleBtn="Modal default" title="Título modal"{" "}
+              &lt;DefaultModal titleBtn="Modal default" title="Título modal"{' '}
               <br />
               body="Body modal" titleBtnClose="Close modal" titleBtnSave="Save
               modal"/&gt;
@@ -967,9 +963,3 @@ class Default extends Component {
 }
 
 export default Default;
-
-/* <div className="example"> 
-<RenderCode>
-&lt; &gt;
-</RenderCode>
-</div> */

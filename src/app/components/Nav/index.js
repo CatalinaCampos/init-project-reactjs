@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Nav } from "react-bootstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Nav } from 'react-bootstrap';
 
 const BaseNav = ({ items, variant }) => (
   <Nav variant={variant}>
-    {items.map((item) => (
+    {items.map(item => (
       <Nav.Item key={item.key}>
         <Nav.Link href={item.path}>{item.title}</Nav.Link>
       </Nav.Item>
@@ -24,13 +24,12 @@ BaseNav.propTypes = {
 };
 
 BaseNav.defaultProps = {
-  variant: "tabs",
-  path: null
+  variant: 'tabs'
 };
 
 const VerticalNav = ({ items, variant }) => (
   <Nav variant={variant} className="flex-column">
-    {items.map((item) => (
+    {items.map(item => (
       <Nav.Link href={item.path} key={item.key}>
         {item.title}
       </Nav.Link>
@@ -50,7 +49,7 @@ VerticalNav.protoTypes = {
 };
 
 VerticalNav.defaultProps = {
-  variant: "tabs",
+  variant: 'tabs',
   path: null
 };
 

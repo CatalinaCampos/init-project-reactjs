@@ -1,6 +1,6 @@
-import React from "react";
-import { BasicInput, DefaultButton, MainLogo } from "../../components/";
-import "./style.scss";
+import React from 'react';
+import { BasicInput, DefaultButton, MainLogo } from '../../components';
+import './style.scss';
 
 const Register = () => (
   <div>

@@ -1,21 +1,21 @@
-import BasicDropdown from "./Dropdowm/";
-import PTruncate from "./PTruncate/";
-import InputCountLetters from "./InputCountLetters/";
-import ControlledEditor from "./Editor/";
-import NestedForm from "./NestedForm/";
-import RenderCode from "./RenderCode/";
-import { Images, ImageFluid } from "./Image/";
-import { DefaultModal, ModalCenter } from "./Modal/";
-import BasicPopover from "./Popover/";
-import BasicToast from "./Toast/";
-import BasicTooltip from "./Tooltips/";
-import BasicPagination from "./Pagination/";
-import { BaseNav, VerticalNav, NavPills } from "./Nav/";
-import ListGroups from "./ListGroups/";
-import { BasicCard, CardsGroupNoMargin, CardsGroupMargin } from "./Cards/";
-import { DefaultButton, BtnGroup } from "./Button/";
-import MainLogo from "./MainLogo/";
-import LinkButton from "./Anchor/"
+import BasicDropdown from './Dropdowm';
+import PTruncate from './PTruncate';
+import InputCountLetters from './InputCountLetters';
+import ControlledEditor from './Editor';
+import NestedForm from './NestedForm';
+import RenderCode from './RenderCode';
+import { Images, ImageFluid } from './Image';
+import { DefaultModal, ModalCenter } from './Modal';
+import BasicPopover from './Popover';
+import BasicToast from './Toast';
+import BasicTooltip from './Tooltips';
+import BasicPagination from './Pagination';
+import { BaseNav, VerticalNav, NavPills } from './Nav';
+import ListGroups from './ListGroups';
+import { BasicCard, CardsGroupNoMargin, CardsGroupMargin } from './Cards';
+import { DefaultButton, BtnGroup } from './Button';
+import MainLogo from './MainLogo';
+import LinkButton from './Anchor';
 import {
   BasicInput,
   InputPrepend,
@@ -29,12 +29,12 @@ import {
   InputDropdown,
   InputDropdownRight,
   CheckBox
-} from "./Input/";
-import ControlledCarousel from "./Carousel/";
-import Title from "./Title/";
-import AccordionToggle from "./Accordion/";
-import { BadgeWithText, BadgeWithCounter, BadgeAlone, Pills } from "./Badge/";
-import { PrincipalNavbar, NavbarTop } from "./Navbar/";
+} from './Input';
+import ControlledCarousel from './Carousel';
+import Title from './Title';
+import AccordionToggle from './Accordion';
+import { BadgeWithText, BadgeWithCounter, BadgeAlone, Pills } from './Badge';
+import { PrincipalNavbar, NavbarTop } from './Navbar';
 
 export {
   DefaultButton,
@@ -82,5 +82,5 @@ export {
   PrincipalNavbar,
   NavbarTop,
   CheckBox,
-  LinkButton,
+  LinkButton
 };

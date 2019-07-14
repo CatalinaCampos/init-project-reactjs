@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Button, Card, CardGroup, CardDeck } from "react-bootstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Button, Card, CardGroup, CardDeck } from 'react-bootstrap';
 
 const BasicCard = ({
   size,
@@ -48,7 +48,7 @@ const BasicCard = ({
 
 BasicCard.propTypes = {
   size: PropTypes.string,
-  titleBtn: PropTypes.string.isRequired,
+  titleBtn: PropTypes.string,
   title: PropTypes.string.isRequired,
   src: PropTypes.string,
   direction: PropTypes.string,
@@ -62,12 +62,12 @@ BasicCard.propTypes = {
 };
 
 BasicCard.defaultProps = {
-  size: "18rem",
-  direction: "top",
-  variantBtn: "info",
+  size: '18rem',
+  direction: 'top',
+  variantBtn: 'info',
   path: null,
-  colorText: "black",
-  colorCard: "light",
+  colorText: 'black',
+  colorCard: 'light',
   colorBorder: null,
   subtitle: null,
   titleBtn: null,
@@ -76,7 +76,7 @@ BasicCard.defaultProps = {
 
 const CardsGroupNoMargin = ({ items, size }) => (
   <CardGroup>
-    {items.map((item) => (
+    {items.map(item => (
       <Card key={item.key} style={{ width: size }}>
         <Card.Img variant={item.position} src={item.src} />
         <Card.Body>
@@ -85,7 +85,7 @@ const CardsGroupNoMargin = ({ items, size }) => (
         </Card.Body>
         {item.footer ? (
           <Card.Footer>
-            <small className="text-muted">{item.footer}</small>{" "}
+            <small className="text-muted">{item.footer}</small>{' '}
           </Card.Footer>
         ) : (
           false
@@ -110,15 +110,12 @@ CardsGroupNoMargin.propTypes = {
 };
 
 CardsGroupNoMargin.defaultProps = {
-  position: "top",
-  text: null,
-  footer: null,
-  size: "18rem"
+  size: '18rem'
 };
 
 const CardsGroupMargin = ({ items, size }) => (
   <CardDeck>
-    {items.map((item) => (
+    {items.map(item => (
       <Card key={item.key} style={{ width: size }}>
         <Card.Img variant={item.position} src={item.src} />
         <Card.Body>
@@ -152,10 +149,7 @@ CardsGroupMargin.propTypes = {
 };
 
 CardsGroupMargin.defaultProps = {
-  position: "top",
-  text: null,
-  footer: null,
-  size: "18rem"
+  size: '18rem'
 };
 
 export { BasicCard, CardsGroupNoMargin, CardsGroupMargin };

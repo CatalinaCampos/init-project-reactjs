@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Modal, Button, ButtonToolbar } from "react-bootstrap";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Modal, Button, ButtonToolbar } from 'react-bootstrap';
 
 class DefaultModal extends Component {
   static propTypes = {
@@ -15,9 +15,9 @@ class DefaultModal extends Component {
   };
 
   static defaultProps = {
-    variantBtn: "info",
-    variantBtnClose: "primary",
-    variantBtnSave: "success"
+    variantBtn: 'info',
+    variantBtnClose: 'primary',
+    variantBtnSave: 'success'
   };
 
   constructor(props, context) {
@@ -50,13 +50,14 @@ class DefaultModal extends Component {
       variantBtnSave,
       titleBtnSave
     } = this.props;
+    const { show } = this.state;
     return (
       <>
         <Button variant={variantBtn} onClick={this.handleShow}>
           {titleBtn}
         </Button>
 
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        <Modal show={show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>{title}</Modal.Title>
           </Modal.Header>
@@ -75,43 +76,46 @@ class DefaultModal extends Component {
   }
 }
 
-class CenteredModal extends Component {
-  static propTypes = {
-    header: PropTypes.string,
-    title: PropTypes.string.isRequired,
-    body: PropTypes.string.isRequired,
-    titlebtn: PropTypes.string.isRequired,
-    size: PropTypes.string
-  };
+const CenteredModal = ({
+  header,
+  title,
+  body,
+  titlebtn,
+  size,
+  onClickHide,
+  ...props
+}) => (
+  <Modal
+    {...props}
+    size={size}
+    aria-labelledby="contained-modal-title-vcenter"
+    centered
+  >
+    <Modal.Header closeButton>
+      <Modal.Title id="contained-modal-title-vcenter">{header}</Modal.Title>
+    </Modal.Header>
+    <Modal.Body>
+      <h4>{title}</h4>
+      <p>{body}</p>
+    </Modal.Body>
+    <Modal.Footer>
+      <Button onClick={onClickHide}>{titlebtn}</Button>
+    </Modal.Footer>
+  </Modal>
+);
 
-  static defaultProps = {
-    header: null,
-    size: "lg"
-  };
+CenteredModal.propTypes = {
+  header: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  titlebtn: PropTypes.string.isRequired,
+  size: PropTypes.string
+};
 
-  render() {
-    const { header, title, body, titlebtn, size } = this.props;
-    return (
-      <Modal
-        {...this.props}
-        size={size}
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">{header}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <h4>{title}</h4>
-          <p>{body}</p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={this.props.onHide}>{titlebtn}</Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
-}
+CenteredModal.defaultProps = {
+  header: null,
+  size: 'lg'
+};
 
 class ModalCenter extends React.Component {
   constructor(...args) {
@@ -120,9 +124,11 @@ class ModalCenter extends React.Component {
     this.state = { modalShow: false };
   }
 
+  modalClose = () => this.setState({ modalShow: false });
+
   render() {
-    let modalClose = () => this.setState({ modalShow: false });
     const { header, title, body, titlebtn, size, titlebtnmodal } = this.props;
+    const { modalShow } = this.state;
     return (
       <ButtonToolbar>
         <Button
@@ -133,8 +139,8 @@ class ModalCenter extends React.Component {
         </Button>
 
         <CenteredModal
-          show={this.state.modalShow}
-          onHide={modalClose}
+          show={modalShow}
+          onHide={this.modalClose}
           header={header}
           title={title}
           body={body}

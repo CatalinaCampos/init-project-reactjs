@@ -1,6 +1,5 @@
-import React from "react";
-//import PropTypes from 'prop-types';
-import { Pagination } from "react-bootstrap";
+import React from 'react';
+import { Pagination } from 'react-bootstrap';
 
 const BasicPagination = () => (
   <Pagination>

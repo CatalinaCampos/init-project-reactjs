@@ -1,37 +1,30 @@
-import React, { Component } from "react";
-// import PropTypes from "prop-types";
-import { DefaultButton } from "../index";
-import "./style.css";
-// import { Button } from "react-bootstrap";
+import React, { Component } from 'react';
+import { DefaultButton } from '../Button';
+import './style.css';
 
 class NestedForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      item: [{ name: "" }],
-      valueInp: ""
+      item: [{ name: '' }]
     };
   }
 
   handleAddItem = () => {
+    const { item } = this.state;
     this.setState({
-      item: this.state.item.concat([{ name: "" }])
+      item: item.concat([{ name: '' }])
     });
   };
 
-  handleRemove = () => {
-    console.log("deleted");
-  };
-
   render() {
-    const itemInput = this.state.item;
-    console.log(this.props);
-    console.log(this.state.valueInp);
+    const { item } = this.state;
+    const { children } = this.props;
     return (
       <div>
-        {itemInput.map((i) => (
-          <div className="form">
-            {this.props.children}
+        {item.map(i => (
+          <div className="form" key={i}>
+            {children}
             <DefaultButton text="-" variant="danger" />
           </div>
         ))}

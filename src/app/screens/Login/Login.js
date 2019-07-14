@@ -1,42 +1,45 @@
-import React, { Component } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { Component } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
 import {
   BasicInput,
   DefaultButton,
   NavbarTop,
   CheckBox,
   MainLogo
-} from "../../components/";
-import "./style.scss";
-import { connect } from "react-redux";
-import { requestSignIn } from "../../actions/auth";
+} from '../../components';
+import './style.scss';
+import { requestSignIn } from '../../actions/auth';
 
 class Login extends Component {
   constructor() {
     super();
     this.state = {
-      email: "",
-      password: ""
+      email: '',
+      password: ''
     };
   }
 
   handleSingIn = () => {
-    if (this.state.email === "") {
-      alert("Ingrese email");
+    const { email, password } = this.state;
+    if (email === '') {
+      alert('Ingrese email');
     }
-    if (this.state.password === "") {
-      alert("Ingrese contraseña");
+    if (password === '') {
+      alert('Ingrese contraseña');
     } else {
-      this.signInAsync(this.state.email, this.state.password);
+      this.signInAsync(email, password);
     }
   };
 
   signInAsync = async (email, password) => {
-    this.props.dispatch(requestSignIn({ email, password }));
+    const { dispatch } = this.props;
+    dispatch(requestSignIn({ email, password }));
   };
 
   render() {
-    console.log(this.state.email);
+    const { email, password } = this.state;
+    console.log(email);
     return (
       <Container fluid>
         <Row>
@@ -52,15 +55,15 @@ class Login extends Component {
               placeholder="Correo"
               size="md"
               className="email"
-              value={this.state.email}
-              change={(e) => this.setState({ email: e.target.value })}
+              value={email}
+              change={e => this.setState({ email: e.target.value })}
             />
             <BasicInput
               placeholder="Contraseña"
               size="md"
               className="password"
-              value={this.state.password}
-              change={(e) => this.setState({ password: e.target.value })}
+              value={password}
+              change={e => this.setState({ password: e.target.value })}
             />
             <Col className="submit">
               <CheckBox text="Recordar" />

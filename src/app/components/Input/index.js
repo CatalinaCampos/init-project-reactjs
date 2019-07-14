@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   InputGroup,
   FormControl,
@@ -7,7 +7,7 @@ import {
   DropdownButton,
   Dropdown,
   Form
-} from "react-bootstrap";
+} from 'react-bootstrap';
 
 const BasicInput = ({ size, ...props }) => (
   <InputGroup size={size}>
@@ -19,7 +19,7 @@ BasicInput.propTypes = {
 };
 
 BasicInput.defaultProps = {
-  size: "sm"
+  size: 'sm'
 };
 
 const InputPrepend = ({
@@ -50,7 +50,7 @@ InputPrepend.propTypes = {
 };
 
 InputPrepend.defaultProps = {
-  size: "sm",
+  size: 'sm',
   placeholder: null,
   ariaLabel: null,
   ariaDescribedby: null
@@ -84,7 +84,7 @@ InputPrependRight.propTypes = {
 };
 
 InputPrependRight.defaultProps = {
-  size: "sm",
+  size: 'sm',
   placeholder: null,
   ariaLabel: null,
   ariaDescribedby: null
@@ -101,14 +101,12 @@ const InputCheckbox = ({ size, ariaLabelInp, ariaLabelForm }) => (
 
 InputCheckbox.propTypes = {
   size: PropTypes.string,
-  ariaLabelInp: PropTypes.string,
-  ariaDescribedby: PropTypes.string
+  ariaLabelInp: PropTypes.string
 };
 
 InputCheckbox.defaultProps = {
-  size: "sm",
-  ariaLabelInp: null,
-  ariaDescribedby: null
+  size: 'sm',
+  ariaLabelInp: null
 };
 
 const InputRadio = ({ size, ariaLabelInp, ariaLabelForm }) => (
@@ -127,7 +125,7 @@ InputRadio.propTypes = {
 };
 
 InputRadio.defaultProps = {
-  size: "sm",
+  size: 'sm',
   ariaLabelInp: null,
   ariaLabelForm: null
 };
@@ -193,7 +191,7 @@ InputBtn.propTypes = {
 };
 
 InputBtn.defaultProps = {
-  variant: "info",
+  variant: 'info',
   ariaDescribedby: null,
   placeholder: null
 };
@@ -229,7 +227,7 @@ InputBtnRight.defaultProps = {
   placeholder: null,
   ariaLabel: null,
   ariaDescribedby: null,
-  variant: "info"
+  variant: 'info'
 };
 
 const InputDropdown = ({ items, variant, title, ariaDescribedby, size }) => (
@@ -265,10 +263,9 @@ InputDropdown.propTypes = {
 };
 
 InputDropdown.defaultProps = {
-  variant: "info",
+  variant: 'info',
   ariaDescribedby: null,
-  path: null,
-  size: "md"
+  size: 'md'
 };
 
 const InputDropdownRight = ({
@@ -319,11 +316,11 @@ InputDropdownRight.propTypes = {
 };
 
 InputDropdownRight.defaultProps = {
-  variant: "info",
+  variant: 'info',
   ariaDescribedby: null,
   ariaLabel: null,
   placeholder: null,
-  size: "md"
+  size: 'md'
 };
 
 const CheckBox = ({ text }) => (

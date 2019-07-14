@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Button, ButtonGroup } from "react-bootstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Button, ButtonGroup } from 'react-bootstrap';
 
 const DefaultButton = ({ text, ...props }) => (
   <Button {...props}>{text}</Button>
@@ -29,11 +29,6 @@ BtnGroup.propTypes = {
       size: PropTypes.string
     })
   ).isRequired
-};
-
-BtnGroup.defaultProps = {
-  variant: "info",
-  size: "md"
 };
 
 export { DefaultButton, BtnGroup };

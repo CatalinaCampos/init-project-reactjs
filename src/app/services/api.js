@@ -1,33 +1,15 @@
-import store from '../config/store';
 import API_CONFIG from '../config/configurations';
 
-const url = () => API_CONFIG.url + API_CONFIG.version;
-const globalTimeout = API_CONFIG.timeout;
-const timeoutMessage = 'Está tardando demasiado, verifica tu conexión a internet e intenta nuevamente';
+const { url } = API_CONFIG;
 
 export default class API {
-  static getGlobalTimeout() {
-    return globalTimeout;
-  }
-
-  static getTimeoutMessage() {
-    return timeoutMessage;
-  }
-
   static genericErrorMessage(status) {
     return status === 404 ? 'Recurso no encontrado' : 'Intentelo más tarde';
   }
 
   static get(route) {
     return fetch(url() + route, {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        'access-token': store.getState().auth.headers.accessToken,
-        client: store.getState().auth.headers.client,
-        uid: store.getState().auth.headers.uid,
-      },
+      method: 'GET'
     });
   }
 
@@ -36,14 +18,7 @@ export default class API {
       method: 'POST',
       mode: 'CORS',
       cache: 'no-cache',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        'access-token': store.getState().auth.headers.accessToken,
-        client: store.getState().auth.headers.client,
-        uid: store.getState().auth.headers.uid,
-      },
-      body: JSON.stringify(params),
+      body: JSON.stringify(params)
     });
   }
 
@@ -52,27 +27,13 @@ export default class API {
       method: 'PUT',
       mode: 'CORS',
       cache: 'no-cache',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        'access-token': store.getState().auth.headers.accessToken,
-        client: store.getState().auth.headers.client,
-        uid: store.getState().auth.headers.uid,
-      },
-      body: JSON.stringify(params),
+      body: JSON.stringify(params)
     });
   }
 
   static delete(route) {
     return fetch(url() + route, {
-      method: 'DELETE',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        'access-token': store.getState().auth.headers.accessToken,
-        client: store.getState().auth.headers.client,
-        uid: store.getState().auth.headers.uid,
-      },
+      method: 'DELETE'
     });
   }
 }

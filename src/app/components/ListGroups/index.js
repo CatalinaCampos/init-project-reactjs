@@ -4,8 +4,10 @@ import { ListGroup } from 'react-bootstrap';
 
 const ListGroups = ({ items, size }) => (
   <ListGroup size={size}>
-    {items.map((item) => (
-      <ListGroup.Item variant={item.variant} key={item.key}>{item.title}</ListGroup.Item>
+    {items.map(item => (
+      <ListGroup.Item variant={item.variant} key={item.key}>
+        {item.title}
+      </ListGroup.Item>
     ))}
   </ListGroup>
 );
@@ -22,7 +24,6 @@ ListGroups.propTypes = {
 };
 
 ListGroups.defaultProps = {
-  variant: 'info',
   size: 'sm'
 };
 

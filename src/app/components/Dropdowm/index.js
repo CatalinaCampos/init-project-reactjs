@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Dropdown } from "react-bootstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Dropdown } from 'react-bootstrap';
 
 const BasicDropdown = ({ variant, titleDrop, items }) => (
   <Dropdown>
@@ -8,7 +8,7 @@ const BasicDropdown = ({ variant, titleDrop, items }) => (
       {titleDrop}
     </Dropdown.Toggle>
     <Dropdown.Menu>
-      {items.map((item) => (
+      {items.map(item => (
         <Dropdown.Item href={item.path} key={item.key}>
           {item.title}
         </Dropdown.Item>
@@ -30,8 +30,7 @@ BasicDropdown.propTypes = {
 };
 
 BasicDropdown.defaultProps = {
-  variant: "info",
-  path: null
+  variant: 'info'
 };
 
 export default BasicDropdown;

@@ -1,6 +1,6 @@
-import React from "react";
-import { LinkButton } from "../../components/";
-import "./style.scss";
+import React from 'react';
+import { LinkButton } from '../../components';
+import './style.scss';
 
 const Profile = () => {
   return (

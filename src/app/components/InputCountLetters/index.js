@@ -1,44 +1,40 @@
-import PropTypes from "prop-types";
-import React, { Component } from "react";
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 class InputCountLetters extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: ""
-    };
-  }
-
   static propTypes = {
-    limitLength: PropTypes.string
+    limit: PropTypes.number
   };
 
   static defaultProps = {
-    limitLength: "120"
+    limit: 120
   };
 
-  handleSave = (e) => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: ''
+    };
+  }
+
+  handleSave = e => {
     this.setState({
       text: e.target.value
     });
   };
 
   render() {
-    let limitLength = parseFloat(this.props.limit);
+    const { limit } = this.props;
+    const { text } = this.state;
     return (
       <div>
-        <textarea
-          maxlength={limitLength}
-          value={this.state.text}
-          onChange={this.handleSave}
-        />
-
+        <textarea maxLength={limit} value={text} onChange={this.handleSave} />
         <p
           style={{
-            color: this.state.text.length <= limitLength - 10 ? "black" : "red"
+            color: text.length <= limit - 10 ? 'black' : 'red'
           }}
         >
-          {this.state.text.length}/{limitLength}
+          {text.length / limit}
         </p>
       </div>
     );
