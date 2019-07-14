@@ -1,15 +1,15 @@
 import React from "react";
-import { BasicInput, ButtonDefault, MainLogo } from "../../components/";
+import { BasicInput, DefaultButton, MainLogo } from "../../components/";
 import "./style.scss";
 
-const CreateAccount = () => (
+const Register = () => (
   <div>
     <MainLogo />
     <div className="container">
       <BasicInput size="sm" placeholder="Contraseña" className="inputLogin" />
-      <ButtonDefault name="Ingresar" path="/home-auth" />
+      <DefaultButton text="Ingresar" path="/home-auth" />
     </div>
   </div>
 );
 
-export default CreateAccount;
+export default Register;

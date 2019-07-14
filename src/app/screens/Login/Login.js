@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import {
   BasicInput,
-  ButtonDefault,
+  DefaultButton,
   NavbarTop,
-  CheckBox
+  CheckBox,
+  MainLogo
 } from "../../components/";
 import "./style.scss";
 import { connect } from "react-redux";
@@ -45,26 +46,26 @@ class Login extends Component {
         </Row>
         <Row className="justify-content-center login">
           <Col md={4} className="form-login">
-            {/* <MainLogo src="https://nnodes.com/Logo_Nnodes.png" width="150px" /> */}
+            <MainLogo />
             <h4>INICIAR SESIÓN</h4>
             <BasicInput
               placeholder="Correo"
               size="md"
-              classN="email"
+              className="email"
               value={this.state.email}
               change={(e) => this.setState({ email: e.target.value })}
             />
             <BasicInput
               placeholder="Contraseña"
               size="md"
-              classN="password"
+              className="password"
               value={this.state.password}
               change={(e) => this.setState({ password: e.target.value })}
             />
             <Col className="submit">
               <CheckBox text="Recordar" />
-              <ButtonDefault
-                name="Ingresar"
+              <DefaultButton
+                text="Ingresar"
                 size="md"
                 onClick={this.handleSingIn}
               />
@@ -76,10 +77,14 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const { notice } = state;
+  const { headers, ongoingRequest, signedIn } = state.auth;
   return {
-    notice
+    notice,
+    headers,
+    ongoingRequest,
+    signedIn
   };
 };
 

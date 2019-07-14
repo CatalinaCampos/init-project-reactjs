@@ -9,27 +9,17 @@ import {
   Form
 } from "react-bootstrap";
 
-const BasicInput = ({ size, placeholder, value, change, width, classN }) => (
-  <InputGroup size={size} style={{ width: width }}>
-    <FormControl
-      placeholder={placeholder}
-      className={classN}
-      value={value}
-      onChange={change}
-    />
+const BasicInput = ({ size, ...props }) => (
+  <InputGroup size={size}>
+    <FormControl {...props} />
   </InputGroup>
 );
 BasicInput.propTypes = {
-  size: PropTypes.string,
-  placeholder: PropTypes.string,
-  value: PropTypes.string,
-  change: PropTypes.func
+  size: PropTypes.string
 };
 
 BasicInput.defaultProps = {
-  size: "sm",
-  placeholder: null,
-  value: ""
+  size: "sm"
 };
 
 const InputPrepend = ({
@@ -250,7 +240,7 @@ const InputDropdown = ({ items, variant, title, ariaDescribedby, size }) => (
       title={title}
       id="input-group-dropdown-1"
     >
-      {items.map((item) => (
+      {items.map(item => (
         <Dropdown.Item href={item.path} key={item.key}>
           {item.text}
         </Dropdown.Item>
@@ -302,7 +292,7 @@ const InputDropdownRight = ({
       title={title}
       id="input-group-dropdown-2"
     >
-      {items.map((item) => (
+      {items.map(item => (
         <Dropdown.Item href={item.path} key={item.key}>
           {item.text}
         </Dropdown.Item>

@@ -13,8 +13,9 @@ import BasicPagination from "./Pagination/";
 import { BaseNav, VerticalNav, NavPills } from "./Nav/";
 import ListGroups from "./ListGroups/";
 import { BasicCard, CardsGroupNoMargin, CardsGroupMargin } from "./Cards/";
-import { ButtonDefault, BtnGroup } from "./Button/";
+import { DefaultButton, BtnGroup } from "./Button/";
 import MainLogo from "./MainLogo/";
+import LinkButton from "./Anchor/"
 import {
   BasicInput,
   InputPrepend,
@@ -36,7 +37,7 @@ import { BadgeWithText, BadgeWithCounter, BadgeAlone, Pills } from "./Badge/";
 import { PrincipalNavbar, NavbarTop } from "./Navbar/";
 
 export {
-  ButtonDefault,
+  DefaultButton,
   MainLogo,
   BasicInput,
   ControlledCarousel,
@@ -80,5 +81,6 @@ export {
   PTruncate,
   PrincipalNavbar,
   NavbarTop,
-  CheckBox
+  CheckBox,
+  LinkButton,
 };

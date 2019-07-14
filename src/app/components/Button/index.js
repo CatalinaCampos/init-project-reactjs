@@ -2,28 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Button, ButtonGroup } from "react-bootstrap";
 
-const ButtonDefault = ({ name, variant, size, path, ...props }) => (
-  <Button variant={variant} size={size} href={path} {...props}>
-    {name}
-  </Button>
+const DefaultButton = ({ text, ...props }) => (
+  <Button {...props}>{text}</Button>
 );
 
-ButtonDefault.propTypes = {
-  variant: PropTypes.string,
-  size: PropTypes.string,
-  path: PropTypes.string,
-  name: PropTypes.string.isRequired
-};
-
-ButtonDefault.defaultProps = {
-  variant: "info",
-  size: "sm",
-  path: null
+DefaultButton.propTypes = {
+  text: PropTypes.string.isRequired
 };
 
 const BtnGroup = ({ items }) => (
   <ButtonGroup>
-    {items.map((item) => (
+    {items.map(item => (
       <Button variant={item.variant} key={item.key} size={item.size}>
         {item.title}
       </Button>
@@ -47,4 +36,4 @@ BtnGroup.defaultProps = {
   size: "md"
 };
 
-export { ButtonDefault, BtnGroup };
+export { DefaultButton, BtnGroup };

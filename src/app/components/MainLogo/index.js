@@ -1,9 +1,10 @@
 import React from "react";
 import { Image } from "react-bootstrap";
+import logo from './logo.png'
 
-const MainLogo = ({ src, alt, width }) => {
+const MainLogo = ({ width }) => {
   return (
-    <Image src={src} alt={alt} className="logo" style={{ width: width }} />
+    <Image src={logo} alt="Logo" className="logo" style={{ width }} />
   );
 };
 

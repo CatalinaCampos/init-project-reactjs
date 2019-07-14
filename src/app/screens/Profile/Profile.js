@@ -1,12 +1,12 @@
 import React from "react";
-import { ButtonDefault } from "../../components/";
+import { LinkButton } from "../../components/";
 import "./style.scss";
 
 const Profile = () => {
   return (
     <div>
       <h1>PERFIL</h1>
-      <ButtonDefault name="Editar perfil" path="profile-edit" />
+      <LinkButton text="Editar perfil" to="profile/edit" />
     </div>
   );
 };

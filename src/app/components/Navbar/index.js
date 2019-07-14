@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Row, Col, Container } from "react-bootstrap";
-import { ButtonDefault, MainLogo } from "../../components/";
+import { LinkButton, MainLogo } from "../../components/";
 
 const PrincipalNavbar = ({ children }) => (
   <Navbar expand="lg" variant="light" bg="light" fixed="top">
@@ -14,8 +14,8 @@ const NavbarTop = () => (
       <Col>
         <PrincipalNavbar>
           <MainLogo src="https://i.imgur.com/LP69Ill.png" width="40px" />
-          <ButtonDefault variant="link" name="Iniciar Sesión" path="/login" />
-          <ButtonDefault variant="outline-info" name="Crear Cuenta" />
+          <LinkButton variant="link" text="Iniciar Sesión" to="/login" />
+          <LinkButton variant="outline-info" text="Crear Cuenta" to="/register" />
         </PrincipalNavbar>
       </Col>
     </Row>

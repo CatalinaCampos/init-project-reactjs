@@ -1,5 +1,4 @@
 import React from "react";
-// import { ButtonDefault } from "../../components";
 import { Container, Row, Col } from "react-bootstrap";
 
 import "./style.scss";

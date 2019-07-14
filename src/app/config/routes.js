@@ -5,7 +5,7 @@ import {
   Default,
   Login,
   Logged,
-  CreateAccount,
+  Register,
   Profile,
   EditProfile
 } from "../screens/";
@@ -17,10 +17,11 @@ const routes = (
       <Switch>
         <Route exact path="/" component={Default} />
         <Route path="/login" component={Login} />
-        <Route path="/new-account" component={CreateAccount} />
-        <Route path="/home-auth" component={Logged} />
-        <Route path="/profile" component={Profile} />
-        <Route path="/profile-edit" component={EditProfile} />
+        <Route path="/register" component={Register} />
+        <Route path="/home" component={Logged} />
+        <Route exact path="/profile" component={Profile} />
+        <Route path="/profile/edit" component={EditProfile} />
+        <Route component={EditProfile} />
       </Switch>
     </BrowserRouter>
   </div>

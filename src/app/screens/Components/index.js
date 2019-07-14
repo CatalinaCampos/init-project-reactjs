@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  ButtonDefault,
+  DefaultButton,
   MainLogo,
   ControlledCarousel,
   Title,
@@ -227,44 +227,44 @@ class Default extends Component {
         <div className="example">
           <h4>Button</h4>
           <div className="demo">
-            <ButtonDefault name="Primary" variant="primary" disabled />
-            <ButtonDefault name="Secondary" variant="secondary" active />
-            <ButtonDefault name="Success" variant="success" block />
-            <ButtonDefault name="Warning" variant="warning" />
-            <ButtonDefault name="Danger" variant="danger" />
-            <ButtonDefault name="Info" variant="info" />
-            <ButtonDefault name="Light" variant="light" />
-            <ButtonDefault name="Dark" variant="dark" />
-            <ButtonDefault name="Link" variant="link" />
+            <DefaultButton text="Primary" variant="primary" disabled />
+            <DefaultButton text="Secondary" variant="secondary" active />
+            <DefaultButton text="Success" variant="success" block />
+            <DefaultButton text="Warning" variant="warning" />
+            <DefaultButton text="Danger" variant="danger" />
+            <DefaultButton text="Info" variant="info" />
+            <DefaultButton text="Light" variant="light" />
+            <DefaultButton text="Dark" variant="dark" />
+            <DefaultButton text="Link" variant="link" />
           </div>
           <div className="code">
             <RenderCode>
-              &lt;ButtonDefault name="Primary" variant="primary" disabled /&gt;
+              &lt;DefaultButton text="Primary" variant="primary" disabled /&gt;
             </RenderCode>
             <RenderCode>
-              &lt;ButtonDefault name="Secondary" variant="secondary" active
+              &lt;DefaultButton text="Secondary" variant="secondary" active
               /&gt;
             </RenderCode>
             <RenderCode>
-              &lt;ButtonDefault name="Success" variant="success" block /&gt;
+              &lt;DefaultButton text="Success" variant="success" block /&gt;
             </RenderCode>
             <RenderCode>
-              &lt;ButtonDefault name="Warning" variant="warning" /&gt;
+              &lt;DefaultButton text="Warning" variant="warning" /&gt;
             </RenderCode>
             <RenderCode>
-              &lt;ButtonDefault name="Danger" variant="danger" /&gt;
+              &lt;DefaultButton text="Danger" variant="danger" /&gt;
             </RenderCode>
             <RenderCode>
-              &lt;ButtonDefault name="Info" variant="info" /&gt;
+              &lt;DefaultButton text="Info" variant="info" /&gt;
             </RenderCode>
             <RenderCode>
-              &lt;ButtonDefault name="Light" variant="light" /&gt;
+              &lt;DefaultButton text="Light" variant="light" /&gt;
             </RenderCode>
             <RenderCode>
-              &lt;ButtonDefault name="Dark" variant="dark" /&gt;
+              &lt;DefaultButton text="Dark" variant="dark" /&gt;
             </RenderCode>
             <RenderCode>
-              &lt;ButtonDefault name="Link" variant="link" /&gt;
+              &lt;DefaultButton text="Link" variant="link" /&gt;
             </RenderCode>
           </div>
           <div className="tip">
