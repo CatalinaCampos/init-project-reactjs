@@ -19,28 +19,24 @@ const SET_NOTICE = '';
 // SIGN IN
 const signInRequest = params => API.post('/auth/sign_in', params);
 function* signInSuccessCallback(result, response) {
-  console.log('Succ', result, response);
   if (result.errors) {
     throw new Error(result.errors.join('\n'));
   } else {
-    yield call(
-      localStorage.setItem,
+    yield localStorage.setItem(
       'access-token',
-      response.headers.get('access-token')
+      "response.headers.get('access-token')"
     );
-    yield call(localStorage.setItem, 'client', response.headers.get('client'));
-    yield call(localStorage.setItem, 'expiry', response.headers.get('expiry'));
-    yield call(
-      localStorage.setItem,
+    yield localStorage.setItem('client', response.headers.get('client'));
+    yield localStorage.setItem('expiry', response.headers.get('expiry'));
+    yield localStorage.setItem(
       'token-type',
       response.headers.get('token-type')
     );
-    yield call(localStorage.setItem, 'uid', response.headers.get('uid'));
+    yield localStorage.setItem('uid', response.headers.get('uid'));
     yield put({ type: SIGN_IN_SUCCESS, result, response });
   }
 }
 function* signInFailureCallback() {
-  console.log('Error');
   yield put({
     type: SIGN_IN_FAILURE
   });

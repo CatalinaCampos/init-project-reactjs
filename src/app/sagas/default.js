@@ -10,7 +10,6 @@ function* runDefaultSaga(callRequest, successCallback, failureCallback) {
       response: call(callRequest.request, callRequest.params),
       timeout: delay(globalTimeout)
     });
-    console.log(callRequest);
 
     if (timeout) throw new Error(timeoutMessage);
 
@@ -21,13 +20,13 @@ function* runDefaultSaga(callRequest, successCallback, failureCallback) {
       const message = yield response.json();
       throw message.errors || 'Inténtelo más tarde.';
     }
-  } catch (err) {
-    console.log(err);
-    yield failureCallback(err);
+  } catch (error) {
+    console.log(error);
+    yield failureCallback(error);
     yield put({
       type: SET_NOTICE,
       title: 'Error',
-      message: err.toString(),
+      message: error.toString(),
       kind: 'error'
     });
   }

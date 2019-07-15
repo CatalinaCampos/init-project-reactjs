@@ -4,9 +4,9 @@ import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const LinkButton = ({ text, to, ...props }) => (
-  <Link to={to}>
-    <Button {...props}>{text}</Button>
-  </Link>
+  <Button {...props}>
+    <Link to={to}>{text}</Link>
+  </Button>
 );
 
 LinkButton.propTypes = {

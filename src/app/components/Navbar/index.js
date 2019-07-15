@@ -5,7 +5,7 @@ import LinkButton from '../Anchor';
 
 const PrincipalNavbar = ({ children }) => (
   <Navbar expand="lg" variant="light" bg="light" fixed="top">
-    <Navbar.Brand href="/">{children}</Navbar.Brand>
+    <Navbar.Brand>{children}</Navbar.Brand>
   </Navbar>
 );
 

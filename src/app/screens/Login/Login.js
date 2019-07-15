@@ -39,7 +39,6 @@ class Login extends Component {
 
   render() {
     const { email, password } = this.state;
-    console.log(email);
     return (
       <Container fluid>
         <Row>
@@ -56,14 +55,14 @@ class Login extends Component {
               size="md"
               className="email"
               value={email}
-              change={e => this.setState({ email: e.target.value })}
+              onChange={e => this.setState({ email: e.target.value })}
             />
             <BasicInput
               placeholder="Contraseña"
               size="md"
               className="password"
               value={password}
-              change={e => this.setState({ password: e.target.value })}
+              onChange={e => this.setState({ password: e.target.value })}
             />
             <Col className="submit">
               <CheckBox text="Recordar" />

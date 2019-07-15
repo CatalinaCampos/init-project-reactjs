@@ -9,31 +9,45 @@ export default class API {
 
   static get(route) {
     return fetch(url() + route, {
-      method: 'GET'
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
     });
   }
 
   static post(route, params = {}) {
     return fetch(url() + route, {
       method: 'POST',
-      mode: 'CORS',
       cache: 'no-cache',
-      body: JSON.stringify(params)
+      body: JSON.stringify(params),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
     });
   }
 
   static put(route, params = {}) {
     return fetch(url() + route, {
       method: 'PUT',
-      mode: 'CORS',
       cache: 'no-cache',
-      body: JSON.stringify(params)
+      body: JSON.stringify(params),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
     });
   }
 
   static delete(route) {
     return fetch(url() + route, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
     });
   }
 }
