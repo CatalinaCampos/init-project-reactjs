@@ -60,7 +60,7 @@ class Login extends Component {
             <BasicInput
               placeholder="Contraseña"
               size="md"
-              className="password"
+              type="password"
               value={password}
               onChange={e => this.setState({ password: e.target.value })}
             />
@@ -80,11 +80,8 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => {
-  const { notice } = state;
-  const { headers, ongoingRequest, signedIn } = state.auth;
+  const { ongoingRequest, signedIn } = state.auth;
   return {
-    notice,
-    headers,
     ongoingRequest,
     signedIn
   };
