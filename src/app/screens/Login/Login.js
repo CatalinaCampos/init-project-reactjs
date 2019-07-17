@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import {
   BasicInput,
   DefaultButton,
@@ -15,8 +16,8 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
-      email: '',
-      password: ''
+      email: 'admin@nnodes.com',
+      password: '123123123'
     };
   }
 
@@ -35,6 +36,13 @@ class Login extends Component {
   signInAsync = async (email, password) => {
     const { dispatch } = this.props;
     dispatch(requestSignIn({ email, password }));
+  };
+
+  componentWillReceiveProps = nextProps => {
+    const { signedIn, history } = this.props;
+    if (signedIn !== nextProps.signedIn && nextProps.signedIn) {
+      history.push('/home');
+    }
   };
 
   render() {
@@ -87,4 +95,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Login);
+export default withRouter(connect(mapStateToProps)(Login));

@@ -21,7 +21,6 @@ function* runDefaultSaga(callRequest, successCallback, failureCallback) {
       throw message.errors || 'Inténtelo más tarde.';
     }
   } catch (error) {
-    console.log(error);
     yield failureCallback(error);
     yield put({
       type: SET_NOTICE,
