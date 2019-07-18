@@ -1,5 +1,5 @@
 const API_CONFIG = {
-  domain: 'http://nn-meds.nnodes.com/api/',
+  domain: 'http://backend.nnodes.com/api/',
   version: 'v1',
   url: () => API_CONFIG.domain + API_CONFIG.version,
   globalTimeout: 15 * 1000,

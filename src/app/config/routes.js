@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-// import { history } from './store';
 import {
   Default,
   Login,

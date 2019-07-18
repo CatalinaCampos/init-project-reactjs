@@ -34,7 +34,7 @@ import ControlledCarousel from './Carousel';
 import Title from './Title';
 import AccordionToggle from './Accordion';
 import { BadgeWithText, BadgeWithCounter, BadgeAlone, Pills } from './Badge';
-import { PrincipalNavbar, NavbarTop } from './Navbar';
+import { PrincipalNavbar, NavbarTop, NavbarLogged } from './Navbar';
 
 export {
   DefaultButton,
@@ -82,5 +82,6 @@ export {
   PrincipalNavbar,
   NavbarTop,
   CheckBox,
-  LinkButton
+  LinkButton,
+  NavbarLogged
 };

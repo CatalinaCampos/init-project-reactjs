@@ -1,13 +1,21 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { NavbarLogged } from '../../components';
 
 import './style.scss';
 
 const Logged = () => {
   return (
-    <Container>
+    <Container fluid>
       <Row>
-        <Col>logged</Col>
+        <Col>
+          <NavbarLogged />
+        </Col>
+      </Row>
+      <Row className="justify-content-center login">
+        <Col md={4} className="form-login">
+          <h4>Home</h4>
+        </Col>
       </Row>
     </Container>
   );

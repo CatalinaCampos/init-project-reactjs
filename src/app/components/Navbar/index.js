@@ -27,4 +27,18 @@ const NavbarTop = () => (
   </Container>
 );
 
-export { PrincipalNavbar, NavbarTop };
+const NavbarLogged = () => (
+  <Container>
+    <Row>
+      <Col>
+        <PrincipalNavbar>
+          <MainLogo src="https://i.imgur.com/LP69Ill.png" width="40px" />
+          <LinkButton variant="link" text="Perfil" to="/" />
+          <LinkButton variant="outline-info" text="Cerrar Sesión" to="/" />
+        </PrincipalNavbar>
+      </Col>
+    </Row>
+  </Container>
+);
+
+export { PrincipalNavbar, NavbarTop, NavbarLogged };

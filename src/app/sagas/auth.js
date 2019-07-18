@@ -10,14 +10,17 @@ import {
   PASSWORD_RECOVERY_REQUEST,
   VALIDATE_TOKEN_REQUEST,
   VALIDATE_TOKEN_SUCCESS,
-  CLEAR_AUTH_INFO
+  CLEAR_AUTH_INFO,
+  SIGN_UP_REQUEST,
+  SIGN_UP_SUCCESS,
+  SIGN_UP_FAILURE
 } from '../actions/auth';
 import API from '../services/api';
 import runDefaultSaga from './default';
 
 const SET_NOTICE = '';
 // SIGN IN
-const signInRequest = params => API.post('/auth/sign_in', params);
+const signInRequest = params => API.post('/login', params);
 function* signInSuccessCallback(result, response) {
   if (result.errors) {
     throw new Error(result.errors.join('\n'));
@@ -49,8 +52,42 @@ function* signIn(action) {
   );
 }
 
+// CREATE ACCOUNT
+
+const signUpRequest = params => API.post('/signup', params);
+function* signUpSuccessCallback(result, response) {
+  if (result.errors) {
+    throw new Error(result.errors.join('\n'));
+  } else {
+    yield localStorage.setItem(
+      'access-token',
+      "response.headers.get('access-token')"
+    );
+    yield localStorage.setItem('client', response.headers.get('client'));
+    yield localStorage.setItem('expiry', response.headers.get('expiry'));
+    yield localStorage.setItem(
+      'token-type',
+      response.headers.get('token-type')
+    );
+    yield localStorage.setItem('uid', response.headers.get('uid'));
+    yield put({ type: SIGN_UP_SUCCESS, result, response });
+  }
+}
+function* signUpFailureCallback() {
+  yield put({
+    type: SIGN_UP_FAILURE
+  });
+}
+function* signUp(action) {
+  yield runDefaultSaga(
+    { request: signUpRequest, params: action.params },
+    signUpSuccessCallback,
+    signUpFailureCallback
+  );
+}
+
 // SIGN OUT
-const signOutRequest = () => API.delete('/auth/sign_out');
+const signOutRequest = () => API.delete('/logout');
 function* signOutSuccessCallback(result) {
   if (result.success) {
     yield call(localStorage.removeItem, 'access-token');
@@ -135,6 +172,7 @@ function* recoverPassword(action) {
 // DEFINE authSagas
 export default function* authSagas() {
   yield takeEvery(SIGN_IN_REQUEST, signIn);
+  yield takeEvery(SIGN_UP_REQUEST, signUp);
   yield takeEvery(SIGN_OUT_REQUEST, signOut);
   yield takeEvery(VALIDATE_TOKEN_REQUEST, validateToken);
   yield takeEvery(PASSWORD_RECOVERY_REQUEST, recoverPassword);

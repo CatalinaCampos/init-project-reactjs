@@ -10,7 +10,10 @@ import {
   VALIDATE_TOKEN_SUCCESS,
   CLEAR_AUTH_INFO,
   PASSWORD_RECOVERY_REQUEST,
-  PASSWORD_RECOVERY_FINISHED
+  PASSWORD_RECOVERY_FINISHED,
+  SIGN_UP_REQUEST,
+  SIGN_UP_SUCCESS,
+  SIGN_UP_FAILURE
 } from '../actions/auth';
 
 const initialState = {
@@ -60,6 +63,24 @@ const reducer = (state = initialState, action) => {
         signedIn: true
       };
     case SIGN_IN_FAILURE:
+      return {
+        ...state,
+        ongoingRequest: { ...state.ongoingRequest, signIn: false }
+      };
+    case SIGN_UP_REQUEST:
+      return {
+        ...state,
+        ongoingRequest: { ...state.ongoingRequest, signIn: false }
+      };
+    case SIGN_UP_SUCCESS:
+      return {
+        ...state,
+        user: action.result,
+        headers: setHeaders(action),
+        ongoingRequest: { ...state.ongoingRequest, signIn: false },
+        signedIn: true
+      };
+    case SIGN_UP_FAILURE:
       return {
         ...state,
         ongoingRequest: { ...state.ongoingRequest, signIn: false }
