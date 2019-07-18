@@ -88,12 +88,14 @@ const reducer = (state = initialState, action) => {
     case SIGN_OUT_REQUEST:
       return {
         ...state,
-        ongoingRequest: { ...state.ongoingRequest, signOut: true }
+        ongoingRequest: { ...state.ongoingRequest, signOut: false },
+        signedIn: false
       };
     case SIGN_OUT_SUCCESS:
       return {
         ...initialState,
-        ongoingRequest: { ...state.ongoingRequest, signOut: false }
+        ongoingRequest: { ...state.ongoingRequest, signOut: false },
+        signedIn: false
       };
     case SIGN_OUT_FAILURE:
       return {

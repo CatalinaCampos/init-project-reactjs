@@ -27,14 +27,14 @@ const NavbarTop = () => (
   </Container>
 );
 
-const NavbarLogged = () => (
+const NavbarLogged = ({ children }) => (
   <Container>
     <Row>
       <Col>
         <PrincipalNavbar>
           <MainLogo src="https://i.imgur.com/LP69Ill.png" width="40px" />
           <LinkButton variant="link" text="Perfil" to="/" />
-          <LinkButton variant="outline-info" text="Cerrar Sesión" to="/" />
+          {children}
         </PrincipalNavbar>
       </Col>
     </Row>
