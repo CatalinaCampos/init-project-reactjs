@@ -77,7 +77,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         user: action.result,
         headers: setHeaders(action),
-        ongoingRequest: { ...state.ongoingRequest, signIn: false },
+        ongoingRequest: { ...state.ongoingRequest, signIn: true },
         signedIn: true
       };
     case SIGN_UP_FAILURE:
@@ -88,14 +88,12 @@ const reducer = (state = initialState, action) => {
     case SIGN_OUT_REQUEST:
       return {
         ...state,
-        ongoingRequest: { ...state.ongoingRequest, signOut: false },
-        signedIn: false
+        ongoingRequest: { ...state.ongoingRequest, signOut: false }
       };
     case SIGN_OUT_SUCCESS:
       return {
         ...initialState,
-        ongoingRequest: { ...state.ongoingRequest, signOut: false },
-        signedIn: false
+        ongoingRequest: { ...state.ongoingRequest, signOut: false }
       };
     case SIGN_OUT_FAILURE:
       return {
