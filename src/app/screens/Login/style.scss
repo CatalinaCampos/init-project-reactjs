@@ -1,3 +1,5 @@
+@import '../../assets/stylesheets/custom_variables.scss';
+
 .login {
   align-items: center;
   height: 85vh;
@@ -22,5 +24,5 @@
 
 h4 {
   color: #4a4a48;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
