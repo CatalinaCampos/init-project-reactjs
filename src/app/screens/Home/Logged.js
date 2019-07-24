@@ -43,7 +43,7 @@ class Logged extends Component {
         </Row>
         <Row className="justify-content-center login">
           <Col md={4} className="form-login">
-            <h4>Home</h4>
+            <h4>Homee</h4>
           </Col>
         </Row>
       </Container>
