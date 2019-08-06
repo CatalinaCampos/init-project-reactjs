@@ -2,14 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, ButtonGroup } from 'react-bootstrap';
 
-const DefaultButton = ({ text, ...props }) => (
-  <Button {...props}>{text}</Button>
-);
-
-DefaultButton.propTypes = {
-  text: PropTypes.string.isRequired
-};
-
 const BtnGroup = ({ items }) => (
   <ButtonGroup>
     {items.map(item => (
@@ -31,4 +23,4 @@ BtnGroup.propTypes = {
   ).isRequired
 };
 
-export { DefaultButton, BtnGroup };
+export default BtnGroup;

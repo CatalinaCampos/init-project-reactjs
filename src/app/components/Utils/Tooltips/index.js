@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   ButtonToolbar,
   OverlayTrigger,
   Button,
   Tooltip
-} from "react-bootstrap";
+} from 'react-bootstrap';
 
 const BasicTooltip = ({ direction, text, variant, title }) => (
   <ButtonToolbar>
@@ -27,7 +27,7 @@ BasicTooltip.propTypes = {
 };
 
 BasicTooltip.defaultProps = {
-  variant: "info"
+  variant: 'info'
 };
 
 export default BasicTooltip;

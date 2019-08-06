@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Carousel from "react-bootstrap/Carousel";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Carousel from 'react-bootstrap/Carousel';
 
 const ControlledCarousel = ({ items }) => (
   <Carousel>
-    {items.map((item) => (
+    {items.map(item => (
       <Carousel.Item key={item.key}>
         <img className="d-block w-100" src={item.src} alt="" />
         <Carousel.Caption>

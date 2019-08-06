@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button, FormControl } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import {
-  BasicInput,
-  DefaultButton,
-  NavbarTop,
-  CheckBox,
-  MainLogo
-} from '../../components';
+import { NavbarTop, CheckBox, MainLogo } from '../../components';
 import './style.scss';
 import { requestSignIn } from '../../actions/auth';
 
@@ -61,27 +55,23 @@ class Login extends Component {
           <Col md={4} className="form-login">
             <MainLogo />
             <h4>INICIAR SESIÓN</h4>
-            <BasicInput
+            <FormControl
               placeholder="Correo"
-              size="md"
               className="email"
               value={email}
               onChange={e => this.setState({ email: e.target.value })}
             />
-            <BasicInput
+            <FormControl
               placeholder="Contraseña"
-              size="md"
               type="password"
               value={password}
               onChange={e => this.setState({ password: e.target.value })}
             />
             <Col className="submit">
               <CheckBox text="Recordar" />
-              <DefaultButton
-                text="Ingresar"
-                size="md"
-                onClick={this.handleSingIn}
-              />
+              <Button size="md" onClick={this.handleSingIn}>
+                Ingresar
+              </Button>
             </Col>
           </Col>
         </Row>

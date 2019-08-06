@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Editor } from "react-draft-wysiwyg";
-import { EditorState } from "draft-js";
+import React, { Component } from 'react';
+import { Editor } from 'react-draft-wysiwyg';
+import { EditorState } from 'draft-js';
 
 class ControlledEditor extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class ControlledEditor extends Component {
     };
   }
 
-  onEditorStateChange = (editorState) => {
+  onEditorStateChange = editorState => {
     this.setState({
       editorState
     });

@@ -1,23 +1,21 @@
-import BasicDropdown from './Dropdowm';
-import PTruncate from './PTruncate';
-import InputCountLetters from './InputCountLetters';
-import ControlledEditor from './Editor';
-import NestedForm from './NestedForm';
-import RenderCode from './RenderCode';
-import { Images, ImageFluid } from './Image';
-import { DefaultModal, ModalCenter } from './Modal';
-import BasicPopover from './Popover';
-import BasicToast from './Toast';
-import BasicTooltip from './Tooltips';
-import BasicPagination from './Pagination';
-import { BaseNav, VerticalNav, NavPills } from './Nav';
-import ListGroups from './ListGroups';
-import { BasicCard, CardsGroupNoMargin, CardsGroupMargin } from './Cards';
-import { DefaultButton, BtnGroup } from './Button';
-import MainLogo from './MainLogo';
-import LinkButton from './Anchor';
+import BasicDropdown from './Utils/Dropdowm';
+import PTruncate from './Utils/PTruncate';
+import InputCountLetters from './Utils/InputCountLetters';
+import ControlledEditor from './Utils/Editor';
+import NestedForm from './Utils/NestedForm';
+import RenderCode from './Utils/RenderCode';
+import { DefaultModal, ModalCenter } from './Utils/Modal';
+import BasicPopover from './Utils/Popover';
+import BasicToast from './Utils/Toast';
+import BasicTooltip from './Utils/Tooltips';
+import BasicPagination from './Utils/Pagination';
+import { BaseNav, VerticalNav, NavPills } from './Utils/Nav';
+import ListGroups from './Utils/ListGroups';
+import { BasicCard, CardsGroupNoMargin, CardsGroupMargin } from './Utils/Cards';
+import BtnGroup from './Utils/Button';
+import MainLogo from './Utils/MainLogo';
+import LinkButton from './Utils/Anchor';
 import {
-  BasicInput,
   InputPrepend,
   InputPrependRight,
   InputCheckbox,
@@ -29,24 +27,18 @@ import {
   InputDropdown,
   InputDropdownRight,
   CheckBox
-} from './Input';
-import ControlledCarousel from './Carousel';
-import Title from './Title';
-import AccordionToggle from './Accordion';
-import { BadgeWithText, BadgeWithCounter, BadgeAlone, Pills } from './Badge';
-import { PrincipalNavbar, NavbarTop, NavbarLogged } from './Navbar';
+} from './Utils/Input';
+import ControlledCarousel from './Utils/Carousel';
+import AccordionToggle from './Utils/Accordion';
+import { BadgeWithText, BadgeWithCounter } from './Utils/Badge';
+import { PrincipalNavbar, NavbarTop, NavbarLogged } from './Utils/Navbar';
 
 export {
-  DefaultButton,
   MainLogo,
-  BasicInput,
   ControlledCarousel,
-  Title,
   AccordionToggle,
   BadgeWithText,
   BadgeWithCounter,
-  BadgeAlone,
-  Pills,
   BtnGroup,
   BasicCard,
   CardsGroupNoMargin,
@@ -72,8 +64,6 @@ export {
   BasicPopover,
   DefaultModal,
   ModalCenter,
-  Images,
-  ImageFluid,
   RenderCode,
   NestedForm,
   ControlledEditor,

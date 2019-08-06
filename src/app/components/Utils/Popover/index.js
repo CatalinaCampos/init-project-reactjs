@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Popover, OverlayTrigger, Button } from "react-bootstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Popover, OverlayTrigger, Button } from 'react-bootstrap';
 
 const BasicPopover = ({
   body,
@@ -34,8 +34,8 @@ BasicPopover.propTypes = {
 
 BasicPopover.defaultProps = {
   body: null,
-  direction: "bottom",
-  variantBtn: "info"
+  direction: 'bottom',
+  variantBtn: 'info'
 };
 
 export default BasicPopover;

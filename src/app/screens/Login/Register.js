@@ -1,8 +1,8 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button, FormControl } from 'react-bootstrap';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { NavbarTop, BasicInput, DefaultButton } from '../../components';
+import { NavbarTop } from '../../components';
 import './style.scss';
 import { signUpRequest } from '../../actions/auth';
 
@@ -53,30 +53,27 @@ class Register extends Component {
         <Row className="justify-content-center login">
           <Col md={4} className="form-login">
             <h4>CREAR CUENTA</h4>
-            {/* <BasicInput
+            {/* <FormControl
               placeholder="Nombre"
               value={name}
               onChange={e => this.setState({ name: e.target.value })}
             /> */}
-            <BasicInput
+            <FormControl
               placeholder="Email"
               value={email}
               onChange={e => this.setState({ email: e.target.value })}
             />
-            <BasicInput
+            <FormControl
               placeholder="Contraseña"
               value={password}
               onChange={e => this.setState({ password: e.target.value })}
             />
-            {/* <BasicInput
+            {/* <FormControl
               placeholder="Repetir Contraseña"
               value={repeatPassword}
               onChange={e => this.setState({ repeatPassword: e.target.value })}
             /> */}
-            <DefaultButton
-              text="Crear Cuenta"
-              onClick={this.handleCreateAccount}
-            />
+            <Button onClick={this.handleCreateAccount}>Crear Cuenta</Button>
           </Col>
         </Row>
       </Container>

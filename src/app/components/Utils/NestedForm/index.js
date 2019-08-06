@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { DefaultButton } from '../Button';
-import './style.css';
+import { Button } from 'react-bootstrap';
 
 class NestedForm extends Component {
   constructor(props) {
@@ -25,10 +24,10 @@ class NestedForm extends Component {
         {item.map(i => (
           <div className="form" key={i}>
             {children}
-            <DefaultButton text="-" variant="danger" />
+            <Button variant="danger">-</Button>
           </div>
         ))}
-        <DefaultButton text="+" onClick={this.handleAddItem} />
+        <Button onClick={this.handleAddItem}>+</Button>
       </div>
     );
   }

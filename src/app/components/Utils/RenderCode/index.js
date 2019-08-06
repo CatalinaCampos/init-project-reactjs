@@ -1,14 +1,11 @@
 import React from 'react';
-import './style.scss';
 
 const RenderCode = ({ ...props }) => {
   const { children } = props;
   return (
     <div>
       <figure>
-        <pre>
-          <code>{children}</code>
-        </pre>
+        <pre>{children ? <code>&lt;{children} /&gt;</code> : false}</pre>
       </figure>
     </div>
   );

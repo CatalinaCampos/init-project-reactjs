@@ -1,21 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { Component } from 'react';
+import { FormControl } from 'react-bootstrap';
 import {
-  DefaultButton,
   MainLogo,
   ControlledCarousel,
-  Title,
   AccordionToggle,
   BadgeWithText,
   BadgeWithCounter,
-  BadgeAlone,
-  Pills,
   BtnGroup,
   BasicCard,
   CardsGroupNoMargin,
   CardsGroupMargin,
   BasicDropdown,
-  BasicInput,
   InputPrepend,
   InputPrependRight,
   InputCheckbox,
@@ -35,8 +31,6 @@ import {
   BasicPopover,
   DefaultModal,
   ModalCenter,
-  Images,
-  ImageFluid,
   RenderCode,
   NestedForm,
   ControlledEditor,
@@ -70,7 +64,7 @@ class Default extends Component {
           </div>
           <div className="code">
             <RenderCode>
-              &lt;PTruncate text="12345678901234" maxLength="13" /&gt;
+              PTruncate text="12345678901234" maxLength="13"
             </RenderCode>
           </div>
           <div className="tip">
@@ -86,7 +80,7 @@ class Default extends Component {
             <InputCountLetters limit={120} />
           </div>
           <div className="code">
-            <RenderCode>&lt;InputCountLetters limit="120" /&gt;</RenderCode>
+            <RenderCode>InputCountLetters limit="120"</RenderCode>
           </div>
           <div className="tip">
             <p>
@@ -109,8 +103,8 @@ class Default extends Component {
           <h4>Nested form</h4>
           <div className="demo">
             <NestedForm>
-              <BasicInput placeholder="Nombre" />
-              <BasicInput placeholder="Apellido" />
+              <FormControl placeholder="Nombre" />
+              <FormControl placeholder="Apellido" />
             </NestedForm>
           </div>
           <div className="code">
@@ -133,9 +127,7 @@ class Default extends Component {
             <AccordionToggle items={dataAccordion} />
           </div>
           <div className="code">
-            <RenderCode>
-              &lt;AccordionToggle items=&#123;data&#125; /&gt;
-            </RenderCode>
+            <RenderCode>AccordionToggle items=&#123;data&#125;</RenderCode>
           </div>
           <div className="dataType">
             <RenderCode>
@@ -152,29 +144,13 @@ class Default extends Component {
         </div>
 
         <div className="example">
-          <h4>Badge</h4>
-          <div className="demo">
-            <BadgeAlone title="badge" />
-          </div>
-          <div className="code">
-            <RenderCode>&lt;BadgeAlone title="badge" /&gt;</RenderCode>
-          </div>
-          <div className="tip">
-            <p>
-              <strong>Required:</strong> title
-              <strong> Default:</strong> variant: "info"
-            </p>
-          </div>
-        </div>
-
-        <div className="example">
           <h4>Badge with counter</h4>
           <div className="demo">
             <BadgeWithCounter text="badge con contador" counter="3" />
           </div>
           <div className="code">
             <RenderCode>
-              &lt;BadgeWithCounter text="badge con contador" counter="3" /&gt;
+              BadgeWithCounter text="badge con contador" counter="3"
             </RenderCode>
           </div>
           <div className="tip">
@@ -193,7 +169,7 @@ class Default extends Component {
           </div>
           <div className="code">
             <RenderCode>
-              &lt;BadgeWithText text="Nuevo badge" title="Nuevo" /&gt;
+              BadgeWithText text="Nuevo badge" title="Nuevo"
             </RenderCode>
           </div>
           <div className="tip">
@@ -205,80 +181,12 @@ class Default extends Component {
         </div>
 
         <div className="example">
-          <h4>Pills</h4>
-          <div className="demo">
-            <Pills title="pill" />
-          </div>
-          <div className="code">
-            <RenderCode>&lt;Pills title="pill" /&gt;</RenderCode>
-          </div>
-          <div className="tip">
-            <p>
-              <strong>Required:</strong> title
-              <strong> Default:</strong> variant: "info"
-            </p>
-          </div>
-        </div>
-
-        <div className="example">
-          <h4>Button</h4>
-          <div className="demo">
-            <DefaultButton text="Primary" variant="primary" disabled />
-            <DefaultButton text="Secondary" variant="secondary" active />
-            <DefaultButton text="Success" variant="success" block />
-            <DefaultButton text="Warning" variant="warning" />
-            <DefaultButton text="Danger" variant="danger" />
-            <DefaultButton text="Info" variant="info" />
-            <DefaultButton text="Light" variant="light" />
-            <DefaultButton text="Dark" variant="dark" />
-            <DefaultButton text="Link" variant="link" />
-          </div>
-          <div className="code">
-            <RenderCode>
-              &lt;DefaultButton text="Primary" variant="primary" disabled /&gt;
-            </RenderCode>
-            <RenderCode>
-              &lt;DefaultButton text="Secondary" variant="secondary" active
-              /&gt;
-            </RenderCode>
-            <RenderCode>
-              &lt;DefaultButton text="Success" variant="success" block /&gt;
-            </RenderCode>
-            <RenderCode>
-              &lt;DefaultButton text="Warning" variant="warning" /&gt;
-            </RenderCode>
-            <RenderCode>
-              &lt;DefaultButton text="Danger" variant="danger" /&gt;
-            </RenderCode>
-            <RenderCode>
-              &lt;DefaultButton text="Info" variant="info" /&gt;
-            </RenderCode>
-            <RenderCode>
-              &lt;DefaultButton text="Light" variant="light" /&gt;
-            </RenderCode>
-            <RenderCode>
-              &lt;DefaultButton text="Dark" variant="dark" /&gt;
-            </RenderCode>
-            <RenderCode>
-              &lt;DefaultButton text="Link" variant="link" /&gt;
-            </RenderCode>
-          </div>
-          <div className="tip">
-            <p>
-              <strong>Required:</strong> name.
-              <strong> Default:</strong> variant: "info" size: "sm" path: null
-              <strong> Optional:</strong> disable, block, active
-            </p>
-          </div>
-        </div>
-
-        <div className="example">
           <h4>Button Group</h4>
           <div className="demo">
             <BtnGroup items={dataGroupBtn} />
           </div>
           <div className="code">
-            <RenderCode>&lt;BtnGroup items=&#123;data&#125; /&gt;</RenderCode>
+            <RenderCode>BtnGroup items=&#123;data&#125;</RenderCode>
           </div>
           <div className="dataType">
             <RenderCode>
@@ -306,7 +214,7 @@ class Default extends Component {
           </div>
           <div className="code">
             <RenderCode>
-              &lt;BasicCard src="linkImg" title="Title" text="Text"
+              BasicCard src="linkImg" title="Title" text="Text"
               titleBtn="Aceptar"/&gt;
             </RenderCode>
           </div>
@@ -327,9 +235,7 @@ class Default extends Component {
             <CardsGroupNoMargin items={dataCardGroup} />
           </div>
           <div className="code">
-            <RenderCode>
-              &lt;CardsGroupNoMargin items=&#123;data&#125; /&gt;
-            </RenderCode>
+            <RenderCode>CardsGroupNoMargin items=&#123;data&#125;</RenderCode>
           </div>
           <div className="dataType">
             <RenderCode>
@@ -353,9 +259,7 @@ class Default extends Component {
             <CardsGroupMargin items={dataCardGroup} />
           </div>
           <div className="code">
-            <RenderCode>
-              &lt;CardsGroupMargin items=&#123;data&#125; /&gt;
-            </RenderCode>
+            <RenderCode>CardsGroupMargin items=&#123;data&#125;</RenderCode>
           </div>
           <div className="dataType">
             <RenderCode>
@@ -379,9 +283,7 @@ class Default extends Component {
             <ControlledCarousel items={dataImages} />
           </div>
           <div className="code">
-            <RenderCode>
-              &lt;ControlledCarousel items=&#123;data&#125; /&gt;
-            </RenderCode>
+            <RenderCode>ControlledCarousel items=&#123;data&#125;</RenderCode>
           </div>
           <div className="dataType">
             <RenderCode>
@@ -408,8 +310,8 @@ class Default extends Component {
           </div>
           <div className="code">
             <RenderCode>
-              &lt;BasicDropdown items=&#123;data&#125; titleDrop="dropdown"
-              variant="info" /&gt;
+              BasicDropdown items=&#123;data&#125; titleDrop="dropdown"
+              variant="info"
             </RenderCode>
           </div>
           <div className="dataType">
@@ -427,28 +329,13 @@ class Default extends Component {
         </div>
 
         <div className="example">
-          <h4>Input</h4>
-          <div className="demo">
-            <BasicInput />
-          </div>
-          <div className="code">
-            <RenderCode>&lt;BasicInput /&gt;</RenderCode>
-          </div>
-          <div className="tip">
-            <p>
-              <strong> Default:</strong> size: "sm", placeholder: null
-            </p>
-          </div>
-        </div>
-
-        <div className="example">
           <h4>Input dropdown left</h4>
           <div className="demo">
             <InputDropdown items={dataInputDropdown} title="dropdown" />
           </div>
           <div className="code">
             <RenderCode>
-              &lt;InputDropdown items=&#123;data&#125; title="dropdown" /&gt;
+              InputDropdown items=&#123;data&#125; title="dropdown"
             </RenderCode>
           </div>
           <div className="dataType">
@@ -473,8 +360,7 @@ class Default extends Component {
           </div>
           <div className="code">
             <RenderCode>
-              &lt;InputDropdownRight items=&#123;data&#125; title="dropdown"
-              /&gt;
+              InputDropdownRight items=&#123;data&#125; title="dropdown"
             </RenderCode>
           </div>
           <div className="dataType">
@@ -498,7 +384,7 @@ class Default extends Component {
             <InputBtn title="button" />
           </div>
           <div className="code">
-            <RenderCode>&lt;InputBtn title="button" /&gt;</RenderCode>
+            <RenderCode>InputBtn title="button"</RenderCode>
           </div>
           <div className="tip">
             <p>
@@ -515,7 +401,7 @@ class Default extends Component {
             <InputBtnRight title="button" />
           </div>
           <div className="code">
-            <RenderCode>&lt;InputBtnRight title="button" /&gt;</RenderCode>
+            <RenderCode>InputBtnRight title="button"</RenderCode>
           </div>
           <div className="tip">
             <p>
@@ -533,8 +419,7 @@ class Default extends Component {
           </div>
           <div className="code">
             <RenderCode>
-              &lt;InputMultiAddon placeholder="input" addon1="1" addon2="2"
-              /&gt;
+              InputMultiAddon placeholder="input" addon1="1" addon2="2"
             </RenderCode>
           </div>
           <div className="tip">
@@ -552,8 +437,7 @@ class Default extends Component {
           </div>
           <div className="code">
             <RenderCode>
-              &lt;InputMultiAddonRight placeholder="input" addon1="1" addon2="2"
-              /&gt;
+              InputMultiAddonRight placeholder="input" addon1="1" addon2="2"
             </RenderCode>
           </div>
           <div className="tip">
@@ -570,7 +454,7 @@ class Default extends Component {
             <InputRadio />
           </div>
           <div className="code">
-            <RenderCode>&lt;InputRadio /&gt;</RenderCode>
+            <RenderCode>InputRadio</RenderCode>
           </div>
           <div className="tip">
             <p>
@@ -586,7 +470,7 @@ class Default extends Component {
             <InputCheckbox />
           </div>
           <div className="code">
-            <RenderCode>&lt;InputCheckbox /&gt;</RenderCode>
+            <RenderCode>InputCheckbox</RenderCode>
           </div>
           <div className="tip">
             <p>
@@ -602,7 +486,7 @@ class Default extends Component {
             <InputPrepend text="@" />
           </div>
           <div className="code">
-            <RenderCode>&lt;InputPrepend text="@" /&gt;</RenderCode>
+            <RenderCode>InputPrepend text="@"</RenderCode>
           </div>
           <div className="tip">
             <p>
@@ -619,7 +503,7 @@ class Default extends Component {
             <InputPrependRight text="@" />
           </div>
           <div className="code">
-            <RenderCode>&lt;InputPrependRight text="@" /&gt;</RenderCode>
+            <RenderCode>InputPrependRight text="@"</RenderCode>
           </div>
           <div className="tip">
             <p>
@@ -631,64 +515,12 @@ class Default extends Component {
         </div>
 
         <div className="example">
-          <h4>Image rounded</h4>
-          <div className="demo">
-            <Images
-              className="imgcuadrada"
-              src="https://nato-pa.int/sites/default/files/default_images/default-image.jpg"
-              rounded
-            />
-            <Images
-              src="https://nato-pa.int/sites/default/files/default_images/default-image.jpg"
-              roundedCircle
-            />
-            <Images
-              src="https://nato-pa.int/sites/default/files/default_images/default-image.jpg"
-              thumbnail
-            />
-          </div>
-          <div className="code">
-            <RenderCode>
-              &lt;Images className="imgcuadrada" src="linkImg" rounded/&gt;
-            </RenderCode>
-            <RenderCode>
-              &lt;Images className="imgcuadrada" src="linkImg"
-              roundedCircle/&gt;
-            </RenderCode>
-            <RenderCode>
-              &lt;Images className="imgcuadrada" src="linkImg" thumbnail/&gt;
-            </RenderCode>
-          </div>
-          <div className="tip">
-            <p>
-              <strong>Required:</strong> src
-              <strong> Optional:</strong> rounded,
-            </p>
-          </div>
-        </div>
-
-        <div className="example">
-          <h4>Image fluid</h4>
-          <div className="demo">
-            <ImageFluid src="https://blog.twitter.com/content/dam/blog-twitter/official/en_us/products/2017/rethinking-our-default-profile-photo/Avatar-Blog2-Round1.png.img.fullhd.medium.png" />
-          </div>
-          <div className="code">
-            <RenderCode>&lt;ImageFluid src="linkImg"/&gt;</RenderCode>
-          </div>
-          <div className="tip">
-            <p>
-              <strong>Required:</strong> src
-            </p>
-          </div>
-        </div>
-
-        <div className="example">
           <h4>List group</h4>
           <div className="demo">
             <ListGroups items={dataListGroup} />
           </div>
           <div className="code">
-            <RenderCode>&lt;ListGroups items=&#123;data&#125; /&gt;</RenderCode>
+            <RenderCode>ListGroups items=&#123;data&#125;</RenderCode>
           </div>
           <div className="dataType">
             <RenderCode>
@@ -717,8 +549,7 @@ class Default extends Component {
           </div>
           <div className="code">
             <RenderCode>
-              &lt;DefaultModal titleBtn="Modal default" title="Título modal"{' '}
-              <br />
+              DefaultModal titleBtn="Modal default" title="Título modal" <br />
               body="Body modal" titleBtnClose="Close modal" titleBtnSave="Save
               modal"/&gt;
             </RenderCode>
@@ -746,8 +577,7 @@ class Default extends Component {
           </div>
           <div className="code">
             <RenderCode>
-              &lt;ModalCenter header="Modal" title="modal title" body="modal
-              body"
+              ModalCenter header="Modal" title="modal title" body="modal body"
               <br />
               titlebtn="close" titlebtnmodal="Modal centrado"/&gt;
             </RenderCode>
@@ -766,7 +596,7 @@ class Default extends Component {
             <MainLogo src="https://nnodes.com/Logo_Nnodes.png" alt="logo" />
           </div>
           <div className="code">
-            <RenderCode>&lt;MainLogo src="linkImg" alt="logo"/&gt;</RenderCode>
+            <RenderCode>MainLogo src="linkImg" alt="logo"/&gt;</RenderCode>
           </div>
           <div className="tip">
             <p>
@@ -782,8 +612,7 @@ class Default extends Component {
           </div>
           <div className="code">
             <RenderCode>
-              &lt;BaseNav items=&#123;data&#125; variant="tabs" active="/home"
-              /&gt;
+              BaseNav items=&#123;data&#125; variant="tabs" active="/home"
             </RenderCode>
           </div>
           <div className="dataType">
@@ -806,9 +635,7 @@ class Default extends Component {
             <VerticalNav items={dataNav} />
           </div>
           <div className="code">
-            <RenderCode>
-              &lt;VerticalNav items=&#123;data&#125; /&gt;
-            </RenderCode>
+            <RenderCode>VerticalNav items=&#123;data&#125;</RenderCode>
           </div>
           <div className="dataType">
             <RenderCode>
@@ -830,7 +657,7 @@ class Default extends Component {
             <BasicPagination />
           </div>
           <div className="code">
-            <RenderCode>&lt;BasicPagination /&gt;</RenderCode>
+            <RenderCode>BasicPagination</RenderCode>
           </div>
           <div className="tip">
             <p>Working for you</p>
@@ -850,11 +677,10 @@ class Default extends Component {
           </div>
           <div className="code">
             <RenderCode>
-              &lt;BasicPopover title="popover" titleBtn="popover disabled"
-              disabled /&gt;
+              BasicPopover title="popover" titleBtn="popover disabled" disabled
             </RenderCode>
             <RenderCode>
-              &lt;BasicPopover title="popover" titleBtn="popover active" /&gt;
+              BasicPopover title="popover" titleBtn="popover active"
             </RenderCode>
           </div>
           <div className="tip">
@@ -900,19 +726,19 @@ class Default extends Component {
           </div>
           <div className="code">
             <RenderCode>
-              &lt;BasicTooltip direction="top" text="top" title="tooltip 1"
+              BasicTooltip direction="top" text="top" title="tooltip 1"
               key="top" variant="primary"/&gt;
             </RenderCode>
             <RenderCode>
-              &lt;BasicTooltip direction="bottom" text="bottom" title="tooltip
-              2" key="top" variant="success"/&gt;
+              BasicTooltip direction="bottom" text="bottom" title="tooltip 2"
+              key="top" variant="success"/&gt;
             </RenderCode>
             <RenderCode>
-              &lt;BasicTooltip direction="right" text="right" title="tooltip 3"
+              BasicTooltip direction="right" text="right" title="tooltip 3"
               key="top" variant="danger"/&gt;
             </RenderCode>
             <RenderCode>
-              &lt;BasicTooltip direction="left" text="left" title="tooltip 4"
+              BasicTooltip direction="left" text="left" title="tooltip 4"
               key="top" variant="warning"/&gt;
             </RenderCode>
           </div>
@@ -925,29 +751,13 @@ class Default extends Component {
         </div>
 
         <div className="example">
-          <h4>Title</h4>
-          <div className="demo">
-            <Title title="Home" />
-          </div>
-          <div className="code">
-            <RenderCode>&lt;Title title="Home" /&gt;</RenderCode>
-          </div>
-          <div className="tip">
-            <p>
-              <strong>Required:</strong> title
-            </p>
-          </div>
-        </div>
-
-        <div className="example">
           <h4>Toast</h4>
           <div className="demo">
             <BasicToast body="body toast" title="btn toast" header="header" />
           </div>
           <div className="code">
             <RenderCode>
-              &lt;BasicToast body="body toast" title="btn toast" header="header"
-              /&gt;
+              BasicToast body="body toast" title="btn toast" header="header"
             </RenderCode>
           </div>
           <div className="tip">

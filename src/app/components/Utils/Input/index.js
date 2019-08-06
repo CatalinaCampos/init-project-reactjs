@@ -9,19 +9,6 @@ import {
   Form
 } from 'react-bootstrap';
 
-const BasicInput = ({ size, ...props }) => (
-  <InputGroup size={size}>
-    <FormControl {...props} />
-  </InputGroup>
-);
-BasicInput.propTypes = {
-  size: PropTypes.string
-};
-
-BasicInput.defaultProps = {
-  size: 'sm'
-};
-
 const InputPrepend = ({
   size,
   text,
@@ -332,7 +319,6 @@ const CheckBox = ({ text }) => (
 );
 
 export {
-  BasicInput,
   InputPrepend,
   InputPrependRight,
   InputCheckbox,
