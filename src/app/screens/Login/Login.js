@@ -36,9 +36,6 @@ class Login extends Component {
     const { signedIn, history } = this.props;
     if (signedIn !== nextProps.signedIn && nextProps.signedIn) {
       history.push('/home');
-    } else {
-      console.log(`signedIn ${signedIn}`);
-      console.log(`nextProps.signedIn ${nextProps.signedIn}`);
     }
   };
 

@@ -2,6 +2,18 @@ import API_CONFIG from '../config/configurations';
 
 const { url } = API_CONFIG;
 
+const headers = () => {
+  if (localStorage.jwt) {
+    return {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.jwt}`
+    };
+  }
+  return {
+    'Content-Type': 'application/json'
+  };
+};
+
 export default class API {
   static genericErrorMessage(status) {
     return status === 404 ? 'Recurso no encontrado' : 'Intentelo más tarde';
@@ -10,10 +22,7 @@ export default class API {
   static get(route) {
     return fetch(url() + route, {
       method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      }
+      headers: headers()
     });
   }
 
@@ -22,10 +31,7 @@ export default class API {
       method: 'POST',
       cache: 'no-cache',
       body: JSON.stringify(params),
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      }
+      headers: headers()
     });
   }
 
@@ -34,20 +40,15 @@ export default class API {
       method: 'PUT',
       cache: 'no-cache',
       body: JSON.stringify(params),
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      }
+      headers: headers()
     });
   }
 
-  static delete(route) {
+  static delete(route, params = {}) {
     return fetch(url() + route, {
       method: 'DELETE',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      }
+      body: JSON.stringify(params),
+      headers: headers()
     });
   }
 }

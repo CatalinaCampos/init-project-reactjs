@@ -14,7 +14,12 @@ function* runDefaultSaga(callRequest, successCallback, failureCallback) {
     if (timeout) throw new Error(timeoutMessage);
 
     if (response.ok) {
-      const result = yield response.json();
+      let result;
+      if (response.status === 204) {
+        result = { success: true };
+      } else {
+        result = yield response.json();
+      }
       yield successCallback(result, response);
     } else {
       const message = yield response.json();

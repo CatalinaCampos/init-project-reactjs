@@ -10,16 +10,15 @@ class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // name: '',
       email: '',
-      password: ''
-      // repeatPassword: ''
+      password: '',
+      passwordConfirmation: ''
     };
   }
 
   handleCreateAccount = () => {
-    const { email, password } = this.state;
-    if (email === '' || password === '') {
+    const { email, password, passwordConfirmation } = this.state;
+    if (email === '' || password === '' || passwordConfirmation === '') {
       alert('Faltan datos');
     } else {
       this.signUpAsync();
@@ -28,12 +27,16 @@ class Register extends Component {
 
   signUpAsync = async () => {
     const { dispatch } = this.props;
-    const { email, password } = this.state;
-    dispatch(signUpRequest({ user: { email, password } }));
+    const { email, password, passwordConfirmation } = this.state;
+    dispatch(
+      signUpRequest({
+        user: { email, password, password_confirmation: passwordConfirmation }
+      })
+    );
   };
 
   componentWillReceiveProps = nextProps => {
-    const { signedIn, history } = this.props;
+    const { signedIn, history } = nextProps;
     if (signedIn !== nextProps.signedIn && nextProps.signedIn) {
       history.push('/home');
     } else {
@@ -42,7 +45,7 @@ class Register extends Component {
   };
 
   render() {
-    const { email, password } = this.state;
+    const { email, password, passwordConfirmation } = this.state;
     return (
       <Container fluid>
         <Row>
@@ -53,11 +56,6 @@ class Register extends Component {
         <Row className="justify-content-center login">
           <Col md={4} className="form-login">
             <h4>CREAR CUENTA</h4>
-            {/* <FormControl
-              placeholder="Nombre"
-              value={name}
-              onChange={e => this.setState({ name: e.target.value })}
-            /> */}
             <FormControl
               placeholder="Email"
               value={email}
@@ -68,11 +66,13 @@ class Register extends Component {
               value={password}
               onChange={e => this.setState({ password: e.target.value })}
             />
-            {/* <FormControl
-              placeholder="Repetir Contraseña"
-              value={repeatPassword}
-              onChange={e => this.setState({ repeatPassword: e.target.value })}
-            /> */}
+            <FormControl
+              placeholder="Confirmar Contraseña"
+              value={passwordConfirmation}
+              onChange={e =>
+                this.setState({ passwordConfirmation: e.target.value })
+              }
+            />
             <Button onClick={this.handleCreateAccount}>Crear Cuenta</Button>
           </Col>
         </Row>

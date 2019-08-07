@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { NavbarLogged } from '../../components';
 import { requestSignOut } from '../../actions/auth';
-
 import './style.scss';
 
 class Logged extends Component {
@@ -22,8 +21,6 @@ class Logged extends Component {
     const { signedIn, history } = this.props;
     if (signedIn !== nextProps.signedIn) {
       history.push('/login');
-    } else {
-      console.log('error al cerrar sesión');
     }
   };
 

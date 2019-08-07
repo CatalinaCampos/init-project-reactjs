@@ -10,13 +10,12 @@ import {
   EditProfile,
   Components
 } from '../screens';
-import '../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      localStorage.getItem('user') ? (
+      localStorage.getItem('jwt') ? (
         <Component {...props} />
       ) : (
         <Redirect
@@ -27,16 +26,29 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   />
 );
 
+const OnlyPublicRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      localStorage.getItem('jwt') ? (
+        <Redirect to={{ pathname: '/home', state: { from: props.location } }} />
+      ) : (
+        <Component {...props} />
+      )
+    }
+  />
+);
+
 const routes = (
   <div>
     <BrowserRouter>
       <Switch>
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
-        <Route path="/home" component={Logged} />
-        <Route path="/profile" component={Profile} />
-        <Route path="/profile/edit" component={EditProfile} />
-        <Route path="/components" component={Components} />
+        <OnlyPublicRoute path="/login" component={Login} />
+        <OnlyPublicRoute path="/register" component={Register} />
+        <PrivateRoute path="/home" component={Logged} />
+        <PrivateRoute path="/profile" component={Profile} />
+        <PrivateRoute path="/profile/edit" component={EditProfile} />
+        <PrivateRoute path="/components" component={Components} />
         <Route path="/" component={Default} />
         <Route component={EditProfile} />
       </Switch>
@@ -44,4 +56,4 @@ const routes = (
   </div>
 );
 
-export { routes, PrivateRoute };
+export default routes;

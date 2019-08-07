@@ -24,13 +24,9 @@ const initialState = {
     role: ''
   },
   headers: {
-    accessToken: '',
-    client: '',
-    expiry: '',
-    tokenType: '',
-    uid: ''
+    accessToken: ''
   },
-  signedIn: false,
+  signedIn: localStorage.jwt !== undefined,
   ongoingRequest: {
     signIn: false,
     signOut: false,
@@ -40,11 +36,7 @@ const initialState = {
 };
 
 const setHeaders = action => ({
-  accessToken: action.response.headers.get('access-token'),
-  client: action.response.headers.get('client'),
-  expiry: action.response.headers.get('expiry'),
-  tokenType: action.response.headers.get('token-type'),
-  uid: action.response.headers.get('uid')
+  accessToken: action.response.headers.get('jwt')
 });
 
 const reducer = (state = initialState, action) => {
@@ -93,7 +85,8 @@ const reducer = (state = initialState, action) => {
     case SIGN_OUT_SUCCESS:
       return {
         ...initialState,
-        ongoingRequest: { ...state.ongoingRequest, signOut: false }
+        ongoingRequest: { ...state.ongoingRequest, signOut: false },
+        signedIn: false
       };
     case SIGN_OUT_FAILURE:
       return {
@@ -112,11 +105,7 @@ const reducer = (state = initialState, action) => {
         signedIn: true
       };
     case CLEAR_AUTH_INFO:
-      localStorage.removeItem('access-token');
-      localStorage.removeItem('client');
-      localStorage.removeItem('expiry');
-      localStorage.removeItem('token-type');
-      localStorage.removeItem('uid');
+      localStorage.removeItem('jwt');
       return {
         ...state,
         user: {
