@@ -13,6 +13,7 @@ export const PASSWORD_RECOVERY_FINISHED = 'PASSWORD_RECOVERY_FINISHED';
 export const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
+export const SET_INFO_USER = 'SET_INFO_USER';
 
 export const requestSignIn = params => ({ type: SIGN_IN_REQUEST, params });
 export const requestSignOut = () => ({ type: SIGN_OUT_REQUEST });

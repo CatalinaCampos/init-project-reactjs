@@ -31,8 +31,7 @@ const initialState = {
     signIn: false,
     signOut: false,
     passwordRecovery: false
-  },
-  navigateTo: null
+  }
 };
 
 const setHeaders = action => ({
@@ -95,8 +94,7 @@ const reducer = (state = initialState, action) => {
       };
     case VALIDATE_TOKEN_REQUEST:
       return {
-        ...state,
-        navigateTo: null
+        ...state
       };
     case RESTORE_AUTH_INFO:
       return {
@@ -121,15 +119,13 @@ const reducer = (state = initialState, action) => {
           tokenType: '',
           uid: ''
         },
-        signedIn: false,
-        navigateTo: action.navigateTo
+        signedIn: false
       };
     case VALIDATE_TOKEN_SUCCESS:
       return {
         ...state,
         user: action.result,
-        headers: setHeaders(action),
-        navigateTo: action.navigateTo
+        headers: setHeaders(action)
       };
     case PASSWORD_RECOVERY_REQUEST:
       return {

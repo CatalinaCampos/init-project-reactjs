@@ -25,10 +25,6 @@ function* signInSuccessCallback(result, response) {
   if (result.errors) {
     throw new Error(result.errors.join('\n'));
   } else {
-    const authorization = response.headers
-      .get('Authorization')
-      .split('Bearer ')[1];
-    yield localStorage.setItem('jwt', authorization);
     yield put({ type: SIGN_IN_SUCCESS, result, response });
   }
 }
@@ -52,10 +48,6 @@ function* signUpSuccessCallback(result, response) {
   if (result.errors) {
     throw new Error(result.errors.join('\n'));
   } else {
-    const authorization = response.headers
-      .get('Authorization')
-      .split('Bearer ')[1];
-    yield localStorage.setItem('jwt', authorization);
     yield put({ type: SIGN_UP_SUCCESS, result, response });
   }
 }
@@ -119,7 +111,7 @@ function* validateToken() {
 }
 
 // RECOVER PASSWORD
-const recoverPasswordRequest = params => API.post('/auth/password', params);
+const recoverPasswordRequest = params => API.post('/password/forgot', params);
 function* recoverPasswordSuccessCallback(result) {
   yield put({ type: PASSWORD_RECOVERY_FINISHED });
   if (result.success) {

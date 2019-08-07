@@ -2,45 +2,41 @@ import React, { Component } from 'react';
 import { Container, Row, Col, Button, FormControl } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { NavbarTop, CheckBox, MainLogo } from '../../components';
+import { NavbarTop, MainLogo } from '../../components';
 import './style.scss';
-import { requestSignIn } from '../../actions/auth';
+import { requestPasswordRecovery } from '../../actions/auth';
 
-class Login extends Component {
+class RecoveryPassword extends Component {
   constructor() {
     super();
     this.state = {
-      email: 'user@nnodes.com',
-      password: '123123123'
+      email: 'user@nnodes.com'
     };
   }
 
-  handleSingIn = () => {
-    const { email, password } = this.state;
+  handleRecoveryPassword = () => {
+    const { email } = this.state;
     if (email === '') {
       alert('Ingrese email');
-    }
-    if (password === '') {
-      alert('Ingrese contraseña');
     } else {
-      this.signInAsync(email, password);
+      this.recoveryPassword(email);
     }
   };
 
-  signInAsync = async (email, password) => {
+  recoveryPassword = async email => {
     const { dispatch } = this.props;
-    dispatch(requestSignIn({ user: { email, password } }));
+    dispatch(requestPasswordRecovery({ email }));
   };
 
   componentWillReceiveProps = nextProps => {
     const { signedIn, history } = this.props;
     if (signedIn !== nextProps.signedIn && nextProps.signedIn) {
-      history.push('/home');
+      history.push('/login');
     }
   };
 
   render() {
-    const { email, password } = this.state;
+    const { email } = this.state;
     return (
       <Container fluid>
         <Row>
@@ -51,23 +47,16 @@ class Login extends Component {
         <Row className="justify-content-center login">
           <Col md={4} className="form-login">
             <MainLogo />
-            <h4>INICIAR SESIÓN</h4>
+            <h4>RECUPERAR CONTRASEÑA</h4>
             <FormControl
               placeholder="Correo"
               className="email"
               value={email}
               onChange={e => this.setState({ email: e.target.value })}
             />
-            <FormControl
-              placeholder="Contraseña"
-              type="password"
-              value={password}
-              onChange={e => this.setState({ password: e.target.value })}
-            />
             <Col className="submit">
-              <CheckBox text="Recordar" />
-              <Button size="md" onClick={this.handleSingIn}>
-                Ingresar
+              <Button size="md" onClick={this.handleRecoveryPassword}>
+                Recuperar
               </Button>
             </Col>
           </Col>
@@ -78,11 +67,10 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => {
-  const { ongoingRequest, signedIn } = state.auth;
+  const { ongoingRequest } = state.auth;
   return {
-    ongoingRequest,
-    signedIn
+    ongoingRequest
   };
 };
 
-export default withRouter(connect(mapStateToProps)(Login));
+export default withRouter(connect(mapStateToProps)(RecoveryPassword));

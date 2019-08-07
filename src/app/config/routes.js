@@ -6,6 +6,7 @@ import {
   Login,
   Logged,
   Register,
+  RecoveryPassword,
   Profile,
   EditProfile,
   Components
@@ -45,6 +46,10 @@ const routes = (
       <Switch>
         <OnlyPublicRoute path="/login" component={Login} />
         <OnlyPublicRoute path="/register" component={Register} />
+        <OnlyPublicRoute
+          path="/recovery_password"
+          component={RecoveryPassword}
+        />
         <PrivateRoute path="/home" component={Logged} />
         <PrivateRoute path="/profile" component={Profile} />
         <PrivateRoute path="/profile/edit" component={EditProfile} />

@@ -10,9 +10,9 @@ class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: '',
-      passwordConfirmation: ''
+      email: 'ncofre@nnodes.com',
+      password: '123123123',
+      passwordConfirmation: '123123123'
     };
   }
 
@@ -57,16 +57,19 @@ class Register extends Component {
           <Col md={4} className="form-login">
             <h4>CREAR CUENTA</h4>
             <FormControl
+              type="email"
               placeholder="Email"
               value={email}
               onChange={e => this.setState({ email: e.target.value })}
             />
             <FormControl
+              type="password"
               placeholder="Contraseña"
               value={password}
               onChange={e => this.setState({ password: e.target.value })}
             />
             <FormControl
+              type="password"
               placeholder="Confirmar Contraseña"
               value={passwordConfirmation}
               onChange={e =>
