@@ -13,7 +13,8 @@ import {
   CLEAR_AUTH_INFO,
   SIGN_UP_REQUEST,
   SIGN_UP_SUCCESS,
-  SIGN_UP_FAILURE
+  SIGN_UP_FAILURE,
+  requestSignIn
 } from '../actions/auth';
 import API from '../services/api';
 import runDefaultSaga from './default';
@@ -44,11 +45,14 @@ function* signIn(action) {
 // CREATE ACCOUNT
 
 const signUpRequest = params => API.post('/signup', params);
-function* signUpSuccessCallback(result, response) {
+function* signUpSuccessCallback(result, response, params) {
   if (result.errors) {
     throw new Error(result.errors.join('\n'));
   } else {
     yield put({ type: SIGN_UP_SUCCESS, result, response });
+    const user = params;
+    delete user.password_confirmation;
+    yield put(requestSignIn(user));
   }
 }
 function* signUpFailureCallback() {

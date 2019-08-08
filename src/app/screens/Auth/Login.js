@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button, FormControl } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import { NavbarTop, CheckBox, MainLogo, LinkButton } from '../../components';
-import './style.scss';
 import { requestSignIn } from '../../actions/auth';
+import './style.scss';
 
 class Login extends Component {
   constructor() {

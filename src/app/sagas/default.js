@@ -29,12 +29,12 @@ function* runDefaultSaga(callRequest, successCallback, failureCallback) {
     });
 
     if (timeout) throw new Error(timeoutMessage);
-    console.log('default');
+
     if (response.ok) {
       const result =
         response.status === 204 ? { success: true } : response.json();
       setUserHeaders(response.headers);
-      yield successCallback(result, response);
+      yield successCallback(result, response, callRequest.params);
     } else if (response.status === 401) {
       throw new Error(
         response.statusText || 'Ocurrió un problema en la autenticación'
@@ -50,7 +50,7 @@ function* runDefaultSaga(callRequest, successCallback, failureCallback) {
       throw new Error('Hubo un problema. Vuelva a intentar.');
     }
   } catch (error) {
-    yield failureCallback(error);
+    yield failureCallback(error, callRequest.params);
     yield put({
       type: SET_NOTICE,
       title: 'Error',

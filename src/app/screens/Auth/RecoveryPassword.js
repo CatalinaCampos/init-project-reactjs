@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button, FormControl } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import { NavbarTop, MainLogo } from '../../components';
 import './style.scss';
 import { requestPasswordRecovery } from '../../actions/auth';

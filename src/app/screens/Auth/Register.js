@@ -1,6 +1,6 @@
 import { Container, Row, Col, Button, FormControl } from 'react-bootstrap';
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { NavbarTop } from '../../components';
 import './style.scss';
@@ -36,11 +36,9 @@ class Register extends Component {
   };
 
   componentWillReceiveProps = nextProps => {
-    const { signedIn, history } = nextProps;
+    const { signedIn, history } = this.props;
     if (signedIn !== nextProps.signedIn && nextProps.signedIn) {
       history.push('/home');
-    } else {
-      console.log('error');
     }
   };
 

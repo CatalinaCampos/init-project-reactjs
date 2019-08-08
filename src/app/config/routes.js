@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import {
   Default,
   Login,
@@ -41,24 +40,17 @@ const OnlyPublicRoute = ({ component: Component, ...rest }) => (
 );
 
 const routes = (
-  <div>
-    <BrowserRouter>
-      <Switch>
-        <OnlyPublicRoute path="/login" component={Login} />
-        <OnlyPublicRoute path="/register" component={Register} />
-        <OnlyPublicRoute
-          path="/recovery_password"
-          component={RecoveryPassword}
-        />
-        <PrivateRoute path="/home" component={Logged} />
-        <PrivateRoute path="/profile" component={Profile} />
-        <PrivateRoute path="/profile/edit" component={EditProfile} />
-        <PrivateRoute path="/components" component={Components} />
-        <Route path="/" component={Default} />
-        <Route component={EditProfile} />
-      </Switch>
-    </BrowserRouter>
-  </div>
+  <Switch>
+    <OnlyPublicRoute path="/login" component={Login} />
+    <OnlyPublicRoute path="/register" component={Register} />
+    <OnlyPublicRoute path="/recovery_password" component={RecoveryPassword} />
+    <Route path="/home" component={Logged} />
+    <PrivateRoute path="/profile" component={Profile} />
+    <PrivateRoute path="/profile/edit" component={EditProfile} />
+    <PrivateRoute path="/components" component={Components} />
+    <Route path="/" component={Default} />
+    <Route component={EditProfile} />
+  </Switch>
 );
 
 export default routes;
