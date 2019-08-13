@@ -6,6 +6,7 @@ import RecoveryPassword from './Auth/RecoveryPassword';
 import Profile from './Profile/Profile';
 import EditProfile from './Profile/EditProfile';
 import Components from './Components';
+import Other from './Utils/Other';
 
 export {
   Default,
@@ -15,5 +16,6 @@ export {
   RecoveryPassword,
   Profile,
   EditProfile,
-  Components
+  Components,
+  Other
 };

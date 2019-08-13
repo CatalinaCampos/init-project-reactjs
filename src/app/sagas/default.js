@@ -6,12 +6,12 @@ import { SET_INFO_USER } from '../actions/auth';
 const SET_NOTICE = '';
 const { globalTimeout, timeoutMessage } = API_CONFIG;
 
-function setUserHeaders(headers) {
+function* setUserHeaders(headers) {
   try {
     const authorization = headers.get('Authorization').split('Bearer ')[1];
     if (authorization) {
       localStorage.setItem('jwt', authorization);
-      put({
+      yield put({
         type: SET_INFO_USER,
         result: jwt(authorization)
       });
@@ -32,8 +32,8 @@ function* runDefaultSaga(callRequest, successCallback, failureCallback) {
 
     if (response.ok) {
       const result =
-        response.status === 204 ? { success: true } : response.json();
-      setUserHeaders(response.headers);
+        response.status === 204 ? { success: true } : yield response.json();
+      yield setUserHeaders(response.headers);
       yield successCallback(result, response, callRequest.params);
     } else if (response.status === 401) {
       throw new Error(

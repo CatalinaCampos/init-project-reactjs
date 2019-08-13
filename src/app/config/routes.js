@@ -8,7 +8,8 @@ import {
   RecoveryPassword,
   Profile,
   EditProfile,
-  Components
+  Components,
+  Other
 } from '../screens';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -44,12 +45,12 @@ const routes = (
     <OnlyPublicRoute path="/login" component={Login} />
     <OnlyPublicRoute path="/register" component={Register} />
     <OnlyPublicRoute path="/recovery_password" component={RecoveryPassword} />
-    <Route path="/home" component={Logged} />
+    <PrivateRoute path="/home" component={Logged} />
     <PrivateRoute path="/profile" component={Profile} />
     <PrivateRoute path="/profile/edit" component={EditProfile} />
     <PrivateRoute path="/components" component={Components} />
-    <Route path="/" component={Default} />
-    <Route component={EditProfile} />
+    <Route exact path="/" component={Default} />
+    <Route component={Other} />
   </Switch>
 );
 
