@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import { NavbarLogged } from '../../components';
 import { requestSignOut } from '../../actions/auth';
 import { getPage } from '../../actions/utils';

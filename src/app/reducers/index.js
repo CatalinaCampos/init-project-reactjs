@@ -3,11 +3,11 @@ import { connectRouter } from 'connected-react-router';
 import auth from './auth';
 import utils from './utils';
 
-const rootReducer = history =>
+const createRootReducer = history =>
   combineReducers({
     router: connectRouter(history),
     auth,
     utils
   });
 
-export default rootReducer;
+export default createRootReducer;

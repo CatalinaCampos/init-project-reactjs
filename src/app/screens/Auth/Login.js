@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button, FormControl } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import { NavbarTop, CheckBox, MainLogo, LinkButton } from '../../components';
 import { requestSignIn } from '../../actions/auth';
 import './style.scss';
@@ -30,13 +30,6 @@ class Login extends Component {
   signInAsync = async (email, password) => {
     const { dispatch } = this.props;
     dispatch(requestSignIn({ user: { email, password } }));
-  };
-
-  componentWillReceiveProps = nextProps => {
-    const { signedIn, history } = this.props;
-    if (signedIn !== nextProps.signedIn && nextProps.signedIn) {
-      history.push('/home');
-    }
   };
 
   render() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button, FormControl } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import { NavbarTop, MainLogo } from '../../components';
 import './style.scss';
 import { requestPasswordRecovery } from '../../actions/auth';
@@ -26,13 +26,6 @@ class RecoveryPassword extends Component {
   recoveryPassword = async email => {
     const { dispatch } = this.props;
     dispatch(requestPasswordRecovery({ email }));
-  };
-
-  componentWillReceiveProps = nextProps => {
-    const { signedIn, history } = this.props;
-    if (signedIn !== nextProps.signedIn && nextProps.signedIn) {
-      history.push('/login');
-    }
   };
 
   render() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import { NavbarLogged } from '../../components';
 import { requestSignOut } from '../../actions/auth';
 import './style.scss';
@@ -15,13 +15,6 @@ class Logged extends Component {
   logoutAsync = async () => {
     const { dispatch } = this.props;
     dispatch(requestSignOut());
-  };
-
-  componentWillReceiveProps = nextProps => {
-    const { signedIn, history } = this.props;
-    if (signedIn !== nextProps.signedIn) {
-      history.push('/login');
-    }
   };
 
   render() {

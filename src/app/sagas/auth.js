@@ -1,4 +1,5 @@
 import { takeEvery, put } from 'redux-saga/effects';
+import { push } from 'connected-react-router';
 import {
   SIGN_IN_REQUEST,
   SIGN_IN_SUCCESS,
@@ -27,6 +28,7 @@ function* signInSuccessCallback(result, response) {
     throw new Error(result.errors.join('\n'));
   } else {
     yield put({ type: SIGN_IN_SUCCESS, result, response });
+    yield put(push('/home'));
   }
 }
 function* signInFailureCallback() {
@@ -74,6 +76,7 @@ function* signOutSuccessCallback(result) {
   if (result.success) {
     yield localStorage.removeItem('jwt');
     yield put({ type: SIGN_OUT_SUCCESS });
+    yield put(push('/home'));
   } else {
     throw new Error(result);
   }
@@ -125,6 +128,7 @@ function* recoverPasswordSuccessCallback(result) {
       message: result.message,
       kind: 'success'
     });
+    yield put(push('/login'));
   } else {
     throw new Error(result.errors.join('\n'));
   }
