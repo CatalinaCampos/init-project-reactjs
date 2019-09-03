@@ -38,16 +38,6 @@ class Login extends Component {
     dispatch(requestSignIn({ user: { email, password } }));
   };
 
-  componentWillReceiveProps = nextProps => {
-    const { signedIn, history } = this.props;
-    if (signedIn !== nextProps.signedIn && nextProps.signedIn) {
-      history.push('/home');
-    } else {
-      console.log(`signedIn ${signedIn}`);
-      console.log(`nextProps.signedIn ${nextProps.signedIn}`);
-    }
-  };
-
   render() {
     const { email, password } = this.state;
     return (

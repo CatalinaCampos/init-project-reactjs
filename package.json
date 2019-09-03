@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "connected-react-router": "^6.4.0",
+    "connected-react-router": "^6.5.2",
     "draft-js": "^0.10.5",
     "draftjs-utils": "^0.9.3",
     "history": "^4.9.0",
@@ -15,7 +15,6 @@
     "react-dom": "^16.8.6",
     "react-draft-wysiwyg": "^1.13.2",
     "react-redux": "^7.1.0",
-    "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "redux": "^4.0.1",
