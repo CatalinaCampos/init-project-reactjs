@@ -29,7 +29,7 @@ function* getSlides() {
 }
 
 // Page
-const getPageRequest = url => API.get(`/pages${url}`);
+const getPageRequest = url => API.get(`/pages/${url}`);
 
 function* getPageSuccessCallback(result) {
   if (result.errors) {

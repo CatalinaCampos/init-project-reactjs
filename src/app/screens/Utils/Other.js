@@ -18,8 +18,8 @@ class Other extends Component {
   };
 
   componentWillMount = () => {
-    const { dispatch, location } = this.props;
-    dispatch(getPage(location.pathname));
+    const { dispatch, match } = this.props;
+    dispatch(getPage(match.params.page));
   };
 
   loading = () => <h4>Cargando...</h4>;

@@ -1,9 +1,9 @@
 import { call, put, race, delay } from 'redux-saga/effects';
 import jwt from 'jwt-decode';
 import API_CONFIG from '../config/configurations';
-import { SET_INFO_USER } from '../actions/auth';
+import { authTypes } from '../actions/auth';
+import { utilsTypes } from '../actions/utils';
 
-const SET_NOTICE = '';
 const { globalTimeout, timeoutMessage } = API_CONFIG;
 
 function* setUserHeaders(headers) {
@@ -12,7 +12,7 @@ function* setUserHeaders(headers) {
     if (authorization) {
       localStorage.setItem('jwt', authorization);
       yield put({
-        type: SET_INFO_USER,
+        type: authTypes.SET_INFO_USER,
         result: jwt(authorization)
       });
     }
@@ -52,10 +52,9 @@ function* runDefaultSaga(callRequest, successCallback, failureCallback) {
   } catch (error) {
     yield failureCallback(error, callRequest.params);
     yield put({
-      type: SET_NOTICE,
-      title: 'Error',
-      message: error.toString(),
-      kind: 'error'
+      type: utilsTypes.SET_ALERT,
+      kind: 'error',
+      message: error.message
     });
   }
 }

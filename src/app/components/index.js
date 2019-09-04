@@ -1,3 +1,4 @@
+import Alert from './Utils/Alert';
 import BasicDropdown from './Utils/Dropdowm';
 import PTruncate from './Utils/PTruncate';
 import InputCountLetters from './Utils/InputCountLetters';
@@ -34,6 +35,7 @@ import { BadgeWithText, BadgeWithCounter } from './Utils/Badge';
 import { PrincipalNavbar, NavbarTop, NavbarLogged } from './Utils/Navbar';
 
 export {
+  Alert,
   MainLogo,
   ControlledCarousel,
   AccordionToggle,

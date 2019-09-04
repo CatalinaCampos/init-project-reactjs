@@ -50,7 +50,7 @@ const routes = (
     <PrivateRoute path="/profile/edit" component={EditProfile} />
     <PrivateRoute path="/components" component={Components} />
     <Route exact path="/" component={Default} />
-    <Route component={Other} />
+    <Route path="/:page" component={Other} />
   </Switch>
 );
 

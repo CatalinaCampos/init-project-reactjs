@@ -1,39 +1,23 @@
 import { takeEvery, put } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
-import {
-  SIGN_IN_REQUEST,
-  SIGN_IN_SUCCESS,
-  SIGN_IN_FAILURE,
-  SIGN_OUT_REQUEST,
-  SIGN_OUT_SUCCESS,
-  SIGN_OUT_FAILURE,
-  PASSWORD_RECOVERY_FINISHED,
-  PASSWORD_RECOVERY_REQUEST,
-  VALIDATE_TOKEN_REQUEST,
-  VALIDATE_TOKEN_SUCCESS,
-  CLEAR_AUTH_INFO,
-  SIGN_UP_REQUEST,
-  SIGN_UP_SUCCESS,
-  SIGN_UP_FAILURE,
-  requestSignIn
-} from '../actions/auth';
+import { authTypes, requestSignIn } from '../actions/auth';
+import { utilsTypes } from '../actions/utils';
 import API from '../services/api';
 import runDefaultSaga from './default';
 
-const SET_NOTICE = '';
 // SIGN IN
 const signInRequest = params => API.post('/login', params);
 function* signInSuccessCallback(result, response) {
   if (result.errors) {
     throw new Error(result.errors.join('\n'));
   } else {
-    yield put({ type: SIGN_IN_SUCCESS, result, response });
+    yield put({ type: authTypes.SIGN_IN_SUCCESS, result, response });
     yield put(push('/home'));
   }
 }
 function* signInFailureCallback() {
   yield put({
-    type: SIGN_IN_FAILURE
+    type: authTypes.SIGN_IN_FAILURE
   });
 }
 function* signIn(action) {
@@ -45,13 +29,12 @@ function* signIn(action) {
 }
 
 // CREATE ACCOUNT
-
 const signUpRequest = params => API.post('/signup', params);
 function* signUpSuccessCallback(result, response, params) {
   if (result.errors) {
     throw new Error(result.errors.join('\n'));
   } else {
-    yield put({ type: SIGN_UP_SUCCESS, result, response });
+    yield put({ type: authTypes.SIGN_UP_SUCCESS, result, response });
     const user = params;
     delete user.password_confirmation;
     yield put(requestSignIn(user));
@@ -59,7 +42,7 @@ function* signUpSuccessCallback(result, response, params) {
 }
 function* signUpFailureCallback() {
   yield put({
-    type: SIGN_UP_FAILURE
+    type: authTypes.SIGN_UP_FAILURE
   });
 }
 function* signUp(action) {
@@ -75,14 +58,14 @@ const signOutRequest = () => API.delete('/logout');
 function* signOutSuccessCallback(result) {
   if (result.success) {
     yield localStorage.removeItem('jwt');
-    yield put({ type: SIGN_OUT_SUCCESS });
+    yield put({ type: authTypes.SIGN_OUT_SUCCESS });
     yield put(push('/home'));
   } else {
     throw new Error(result);
   }
 }
 function* signOutFailureCallback() {
-  yield put({ type: SIGN_OUT_FAILURE });
+  yield put({ type: authTypes.SIGN_OUT_FAILURE });
 }
 function* signOut() {
   yield runDefaultSaga(
@@ -95,19 +78,14 @@ function* signOut() {
 // VALIDATE TOKENS
 const validateTokenRequest = () => API.get('/me');
 function* validateTokensSuccessCallback(result, response) {
-  // if (result.ok) {
   yield put({
-    type: VALIDATE_TOKEN_SUCCESS,
+    type: authTypes.VALIDATE_TOKEN_SUCCESS,
     result,
-    response,
-    navigateTo: 'App'
+    response
   });
-  // } else {
-  //   throw new Error(response.errors.join('\n'));
-  // }
 }
 function* validateTokensFailureCallback() {
-  yield put({ type: CLEAR_AUTH_INFO, navigateTo: 'Auth' });
+  yield put({ type: authTypes.CLEAR_AUTH_INFO });
 }
 function* validateToken() {
   yield runDefaultSaga(
@@ -120,21 +98,15 @@ function* validateToken() {
 // RECOVER PASSWORD
 const recoverPasswordRequest = params => API.post('/password/forgot', params);
 function* recoverPasswordSuccessCallback(result) {
-  yield put({ type: PASSWORD_RECOVERY_FINISHED });
-  if (result.success) {
-    yield put({
-      type: SET_NOTICE,
-      title: 'Éxito',
-      message: result.message,
-      kind: 'success'
-    });
-    yield put(push('/login'));
-  } else {
-    throw new Error(result.errors.join('\n'));
-  }
+  yield put({ type: authTypes.PASSWORD_RECOVERY_FINISHED });
+  yield put(push('/login'));
+  yield put({
+    type: utilsTypes.SET_ALERT,
+    kind: 'success',
+    message: result.message
+  });
 }
 function* recoverPasswordFailureCallback() {
-  // Error handled by runDefaultSaga
   yield null;
 }
 function* recoverPassword(action) {
@@ -147,9 +119,9 @@ function* recoverPassword(action) {
 
 // DEFINE authSagas
 export default function* authSagas() {
-  yield takeEvery(SIGN_IN_REQUEST, signIn);
-  yield takeEvery(SIGN_UP_REQUEST, signUp);
-  yield takeEvery(SIGN_OUT_REQUEST, signOut);
-  yield takeEvery(VALIDATE_TOKEN_REQUEST, validateToken);
-  yield takeEvery(PASSWORD_RECOVERY_REQUEST, recoverPassword);
+  yield takeEvery(authTypes.SIGN_IN_REQUEST, signIn);
+  yield takeEvery(authTypes.SIGN_UP_REQUEST, signUp);
+  yield takeEvery(authTypes.SIGN_OUT_REQUEST, signOut);
+  yield takeEvery(authTypes.VALIDATE_TOKEN_REQUEST, validateToken);
+  yield takeEvery(authTypes.PASSWORD_RECOVERY_REQUEST, recoverPassword);
 }
