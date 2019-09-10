@@ -37,15 +37,14 @@ function* runDefaultSaga(callRequest, successCallback, failureCallback) {
       yield successCallback(result, response, callRequest.params);
     } else if (response.status === 401) {
       throw new Error(
-        response.statusText || 'Ocurrió un problema en la autenticación'
+        response.meesage || 'Ocurrió un problema en la autenticación'
       );
     } else if (response.status === 403) {
       throw new Error(
-        response.statusText ||
-          'Necesitas autorización para realizar esta acción'
+        response.meesage || 'Necesitas autorización para realizar esta acción'
       );
-    } else if (response.statusText) {
-      throw new Error(response.statusText);
+    } else if (response.meesage) {
+      throw new Error(response.meesage);
     } else {
       throw new Error('Hubo un problema. Vuelva a intentar.');
     }

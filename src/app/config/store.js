@@ -5,18 +5,19 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga from '../sagas';
 import createRootReducer from '../reducers';
 
-const sagaMiddleware = createSagaMiddleware();
-const middleware = [sagaMiddleware];
-
 export const history = createBrowserHistory();
+
+const sagaMW = createSagaMiddleware();
+const routerMW = routerMiddleware(history);
+const middleware = [sagaMW, routerMW];
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   createRootReducer(history),
-  composeEnhancer(applyMiddleware(routerMiddleware(history), ...middleware))
+  composeEnhancer(applyMiddleware(...middleware))
 );
 
-sagaMiddleware.run(rootSaga);
+sagaMW.run(rootSaga);
 
 export default store;
