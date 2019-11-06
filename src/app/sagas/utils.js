@@ -4,7 +4,7 @@ import API from '../services/api';
 import runDefaultSaga from './default';
 
 // Slides
-const getSlidesRequest = () => API.get('/slides');
+const getSlidesRequest = () => API.get('/pages');
 
 function* getSlidesSuccessCallback(result, response) {
   if (result.errors) {

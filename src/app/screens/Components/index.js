@@ -48,7 +48,7 @@ import {
   dataNav
 } from '../../data/data';
 
-class Default extends Component {
+class Components extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -772,4 +772,4 @@ class Default extends Component {
   }
 }
 
-export default Default;
+export default Components;

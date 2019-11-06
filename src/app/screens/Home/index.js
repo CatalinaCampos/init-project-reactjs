@@ -2,22 +2,39 @@ import React, { Component } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { NavbarLogged } from '../../components';
+import { NavbarLogged, DataTable } from '../../components';
 import { requestSignOut } from '../../actions/auth';
-import './style.scss';
+import { getSlides, sendAlert } from '../../actions/utils';
+import columns from './columns';
 
-class Logged extends Component {
+class Home extends Component {
   constructor() {
     super();
     this.state = {};
   }
+
+  componentWillMount = () => {
+    const { dispatch } = this.props;
+    dispatch(getSlides());
+  };
 
   logoutAsync = async () => {
     const { dispatch } = this.props;
     dispatch(requestSignOut());
   };
 
+  handleButtonClick = (item, action) => {
+    const { dispatch } = this.props;
+    dispatch(
+      sendAlert({
+        kind: 'success',
+        message: `Item ID: ${item.id} | Acción: ${action}`
+      })
+    );
+  };
+
   render() {
+    const { slides } = this.props;
     return (
       <Container fluid>
         <Row>
@@ -29,22 +46,17 @@ class Logged extends Component {
             </NavbarLogged>
           </Col>
         </Row>
-        <Row className="justify-content-center login">
-          <Col md={4} className="form-login">
-            <h4>Home</h4>
-          </Col>
-        </Row>
+        <DataTable columns={columns(this.handleButtonClick)} data={slides} />
       </Container>
     );
   }
 }
 
 const mapStateToProps = state => {
-  const { ongoingRequest, signedIn } = state.auth;
+  const { slides } = state.utils;
   return {
-    ongoingRequest,
-    signedIn
+    slides
   };
 };
 
-export default withRouter(connect(mapStateToProps)(Logged));
+export default withRouter(connect(mapStateToProps)(Home));

@@ -1,5 +1,5 @@
 import Default from './Home/Default';
-import Logged from './Home/Logged';
+import Home from './Home';
 import Login from './Auth/Login';
 import Register from './Auth/Register';
 import RecoveryPassword from './Auth/RecoveryPassword';
@@ -10,7 +10,7 @@ import Other from './Utils/Other';
 
 export {
   Default,
-  Logged,
+  Home,
   Login,
   Register,
   RecoveryPassword,

@@ -33,6 +33,7 @@ import ControlledCarousel from './Utils/Carousel';
 import AccordionToggle from './Utils/Accordion';
 import { BadgeWithText, BadgeWithCounter } from './Utils/Badge';
 import { PrincipalNavbar, NavbarTop, NavbarLogged } from './Utils/Navbar';
+import DataTable from './Utils/DataTable';
 
 export {
   Alert,
@@ -75,5 +76,6 @@ export {
   NavbarTop,
   CheckBox,
   LinkButton,
-  NavbarLogged
+  NavbarLogged,
+  DataTable
 };

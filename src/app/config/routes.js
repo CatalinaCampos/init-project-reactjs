@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import {
   Default,
   Login,
-  Logged,
+  Home,
   Register,
   RecoveryPassword,
   Profile,
@@ -45,7 +45,7 @@ const routes = (
     <OnlyPublicRoute path="/login" component={Login} />
     <OnlyPublicRoute path="/register" component={Register} />
     <OnlyPublicRoute path="/recovery_password" component={RecoveryPassword} />
-    <PrivateRoute path="/home" component={Logged} />
+    <PrivateRoute path="/home" component={Home} />
     <PrivateRoute path="/profile" component={Profile} />
     <PrivateRoute path="/profile/edit" component={EditProfile} />
     <PrivateRoute path="/components" component={Components} />
