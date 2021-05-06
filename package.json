@@ -16,7 +16,7 @@
     "react-bootstrap": "^1.0.0-beta.9",
     "react-data-table-component": "^3.4.1",
     "react-dom": "^16.8.6",
-    "react-draft-wysiwyg": "^1.13.2",
+    "react-draft-wysiwyg": "^1.14.6",
     "react-feather": "^2.0.3",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
